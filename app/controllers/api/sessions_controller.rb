@@ -6,8 +6,8 @@ class Api::SessionsController < ApplicationController
             login(@user)
             render 'api/users/show' 
         else 
-            render :json ["Invalid Username/pw"], status: 404
-        end 
+            render json: ["Invalid Username/pw"], status: 404
+        end
     end 
 
     def destroy
@@ -16,7 +16,7 @@ class Api::SessionsController < ApplicationController
             logout 
             render 'api/users/show' 
         else 
-            render :json ["No one to logout"], status: 404
+            render json: ["No one to logout"], status: 404
         end 
     end 
 end

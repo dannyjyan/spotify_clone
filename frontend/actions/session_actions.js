@@ -30,18 +30,21 @@ export const receiveSessionErrors = (errors) => {  //errors is an array
     }
 }
 
-export const login = (user) => (dispatch) => {
-    SessionApiUtil.signup(user)
-        .then(user => dispatch(login(user)))
-}
+export const login = (user) => (dispatch) => (
+    SessionApiUtil.login(user)
+        .then(user => dispatch(receiveCurrentUser(user)), 
+        err => (dispatch(receiveSessionErrors(err.responseJSON))))
+)
 
-export const logout = () => (dispatch) => {
-    SessionApiUtil.signup()
-        .then(() => dispatch(logout()))
-}
-export const signup = (user) => (dispatch) => {
+export const logout = () => (dispatch) => (
+    SessionApiUtil.logout()
+        .then(() => dispatch(logoutCurrentUser()))
+)
+
+export const signup = (user) => (dispatch) => (
     SessionApiUtil.signup(user)
-        .then(user => dispatch(signup(user)))
-}
+        .then(user => dispatch(receiveCurrentUser(user), 
+        err => (dispatch(receiveSessionErrors(err.responseJSON)))))
+)
 
 

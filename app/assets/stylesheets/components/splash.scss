@@ -1,0 +1,26 @@
+@import "../base/colors.scss";
+.splash-container{
+    color: white;
+    background-repeat: no-repeat;
+    font-weight: 800;
+    background: url(http://www.scdn.co/i/home/hero-burst-mobile.svg), linear-gradient($pink, $light-yellow), no-repeat;
+    // background-size: cover;
+    height: 100vh;
+}
+
+
+// @media (max-width: 991){
+//     .splash-container{
+//     }
+// }
+
+@media (min-width: 992px) {
+    .splash-container{
+        background-repeat: no-repeat;
+        background: url(http://www.scdn.co/i/home/hero-burst.svg), linear-gradient($pink, $light-yellow) ;
+    }
+}
+
+
+
+

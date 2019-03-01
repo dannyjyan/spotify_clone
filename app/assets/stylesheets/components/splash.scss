@@ -1,26 +1,71 @@
 @import "../base/colors.scss";
 .splash-container{
-    color: white;
-    background-repeat: no-repeat;
+    color: #FFF;
     font-weight: 800;
-    background: url(http://www.scdn.co/i/home/hero-burst-mobile.svg), linear-gradient($pink, $light-yellow), no-repeat;
-    // background-size: cover;
+    background: url(http://www.scdn.co/i/home/hero-burst-mobile.svg), linear-gradient($pink, $light-yellow);
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
 }
-
-
-// @media (max-width: 991){
-//     .splash-container{
-//     }
-// }
 
 @media (min-width: 992px) {
     .splash-container{
         background-repeat: no-repeat;
         background: url(http://www.scdn.co/i/home/hero-burst.svg), linear-gradient($pink, $light-yellow) ;
+        background-size: cover;
+
     }
 }
+.splash-navbar-header{
+    // display: block;
+}
 
+a{
+    text-decoration: none;
+    // color: $off-white;
+}
 
+.splash-navbar{
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    font-size: 20px;
+    // width: 100%;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.splash-navbar-right{
+    display: flex;
+
+}    
+.splash-logo{
+    padding-left: 100px
+}
+.nav-divider{
+    font-weight: 200px;
+}
+#splash-signup, #splash-login,{
+    color: $off-white;
+}
+
+.splash-navbar-right li{
+    padding: 28px 17px;
+}
+.splash-navbar-right li:hover{
+    color: #1ED760
+}
+.splash-main{
+    padding-top: 250px;
+    padding-bottom: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    font: extra-bold;
+}
+.splash-main h1{
+    font-size: 80px;
+}
 
 

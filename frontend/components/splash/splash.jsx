@@ -14,21 +14,31 @@ class Splash extends React.Component{
                         <li>Premium</li>
                         <li>Help</li>
                         <li>Download</li>
-                        <li><Link to="/login">Log In</Link></li>
-                        <li><Link to="/signup">Sign Up</Link></li>
+                        <li className="nav-divider">|</li>
+                        <li><Link to="/signup" id="splash-signup">Sign Up</Link></li>
+                        <li><Link to="/login" id="splash-login">Log In</Link></li>
+
                     </ul>
                 </nav>
             </div>
             <div className="splash-background"></div>
-            <header id="nav-splash">
-                <div>
-                    A whole lot of nothing
+            <section>
+                <div className="splash-main">
+                    <h1>
+                        Music for everyone.
+                    </h1>
+                    <h4>
+                        Millions of songs. No credit card needed.
+                    </h4>
+                    <Link to="/signup">
+                    GET SPOTIFY FREE
+                    </Link>
+
                 </div>
                 <div>
 
                 </div>
-            </header>
-
+            </section>
         </div>
        )}
 }

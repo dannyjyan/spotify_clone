@@ -1,38 +1,56 @@
 @import "../base/colors.scss";
 .splash-container{
     color: #FFF;
-    font-weight: 800;
-    background: url(http://www.scdn.co/i/home/hero-burst-mobile.svg), linear-gradient($pink, $light-yellow);
+    font-weight: 700;
+    // background: url(http://www.scdn.co/i/home/hero-burst-mobile.svg), linear-gradient($pink, $light-yellow);
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // height: 100vh;
+    text-align: center;
+}
+
+.splash-background {
+    background: padding-box;
+    position: absolute;
+    display: block;
+    // width: 878px;
+    z-index: -1;
     background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+    // transform:  matrix(1, 0, 0, 1, -439, 67.6);
+    background: url(http://www.scdn.co/i/home/hero-burst-mobile.svg);
+    width: 878px;
+    height: 676px;
+    background-size: auto;
 }
 
 @media (min-width: 992px) {
-    .splash-container{
-        background-repeat: no-repeat;
-        background: url(http://www.scdn.co/i/home/hero-burst.svg), linear-gradient($pink, $light-yellow) ;
-        background-size: cover;
-
-    }
+    .splash-background{
+        background-position: top -410px center;
+        background: url(http://www.scdn.co/i/home/hero-burst.svg);
+        width: 1610px;
+        height: 1523px;
+        }
 }
+// linear-gradient($pink, $light-yellow) 
+
 .splash-navbar-header{
     // display: block;
 }
 
 a{
     text-decoration: none;
-    // color: $off-white;
+    color: white;
 }
 
 .splash-navbar{
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     font-size: 20px;
-    // width: 100%;
+    width: 100%;
     height: 80px;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
 
 }
 
@@ -44,9 +62,9 @@ a{
     padding-left: 100px
 }
 .nav-divider{
-    font-weight: 200px;
+    font-weight: 200;
 }
-#splash-signup, #splash-login,{
+#splash-signup, #splash-login{
     color: $off-white;
 }
 
@@ -57,15 +75,59 @@ a{
     color: #1ED760
 }
 .splash-main{
-    padding-top: 250px;
-    padding-bottom: 250px;
+    padding: 250px 15px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;    
-    font: extra-bold;
+    margin: 0 97.5px;
+    position: relative;
+    min-height: 100%;
+    // font: extra-bold;
 }
 .splash-main h1{
     font-size: 80px;
 }
+.signup-button{
+    margin-top: 16px;
+    padding: 16px 48px 18px 48px;
+    background: $green;
+    letter-spacing: 2px;
+    min-width: 160px;
+    display: inline-block;
+    border-radius: 500px;
+    vertical-align: middle;
+}
+.splash-main > h4{
+    margin: 9px 0 18px 0;
+    font-weight: 400;
+    font-size: 18px;
+}
+.splash-main > h1{
+    margin-bottom: 18px;
+}
 
+body{
+    background-color: #F037A5;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(-60%, #F037A5), color-stop(140%, #FAE62D));
+    background: linear-gradient(#F037A5 -60%, #FAE62D 140%);
+    z-index: -2;      
 
+}
+.footer{
+    background-color: #000;
+    background-size: auto;
+    width:100%;
+    // height: 100px;
+    position: absolute;
+    display: block;
+}
+.footer-links{
+    display: flex;
+}
+.footer-container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $off-white;
+}

@@ -10,7 +10,7 @@ class Splash extends React.Component{
                 <div className="splash-navbar-header">
                     <nav className="splash-navbar"> 
                         <Link to="/" className="splash-logo">
-                            <img className="spotify-logo" src=""/>
+                            <img className="spotify-logo" />
                             <span>Chillify</span>
                         </Link>
                         <ul className="splash-navbar-right">
@@ -46,7 +46,7 @@ class Splash extends React.Component{
             <footer className="footer">
                 <div className="footer-container">
                     <Link to="/" className="splash-logo">
-                        <img className="spotify-logo" src=""/>
+                        <img className="spotify-logo" />
                         <span>Chillify</span>
                     </Link>
                     <ul className="footer-links">

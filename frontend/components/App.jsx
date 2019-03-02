@@ -18,11 +18,12 @@ export const App = () => {
     return (
     <>
         <header>
+            <GreetingContainer />
         </header>
         <Switch> 
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-            <AuthRoute exact path="/" component={SplashContainer} />
+            <Route exact path="/" component={SplashContainer} />
         </Switch>
     </>
 )}

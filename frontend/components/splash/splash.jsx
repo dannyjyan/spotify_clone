@@ -4,22 +4,22 @@ class Splash extends React.Component{
 
     render(){
        return ( 
-        <>
+        <div className="wrap">
             <div className="splash-container">
 
                 <div className="splash-navbar-header">
                     <nav className="splash-navbar"> 
                         <Link to="/" className="splash-logo">
-                            <div className="spotify-logo"></div>
-                            Chillify
+                            <img className="spotify-logo" src={window.images.logo}/>
+                            <span>Chillify</span>
                         </Link>
                         <ul className="splash-navbar-right">
                             <li>Premium</li>
                             <li>Help</li>
                             <li>Download</li>
                             <li className="nav-divider">|</li>
-                            <li><Link to="/signup" id="splash-signup">Sign Up</Link></li>
-                            <li><Link to="/login" id="splash-login">Log In</Link></li>
+                            <li><Link to="/signup" className="splash-signup">Sign Up</Link></li>
+                            <li><Link to="/login" className="splash-login">Log In</Link></li>
 
                         </ul>
                     </nav>
@@ -46,8 +46,8 @@ class Splash extends React.Component{
             <footer className="footer">
                 <div className="footer-container">
                     <Link to="/" className="splash-logo">
-                            <div className="spotify-logo"></div>
-                            Chillify
+                        <img className="spotify-logo" src={window.images.logo}/>
+                        <span>Chillify</span>
                     </Link>
                     <ul className="footer-links">
                         <li>Link1</li>
@@ -56,7 +56,7 @@ class Splash extends React.Component{
                     </ul>
                 </div>
             </footer>
-        </>
+        </div>
        )}
 }
 

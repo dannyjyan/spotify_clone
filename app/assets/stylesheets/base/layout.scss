@@ -1,8 +1,59 @@
+@import "../base/colors.scss";
+ 
+body{
+    background-color: #F037A5;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(-60%, #F037A5), color-stop(140%, #FAE62D));
+    background: linear-gradient(#F037A5 -60%, #FAE62D 140%);
+}
+
 .spotify-logo{
     width: 40px;
     height: 40px;
     padding-right: 8px;
     box-sizing: content-box;
     font-weight: 400;
-    background-image: url(https://ya-webdesign.com/images/white-spotify-logo-png.png)
+}
+.btn-block{
+    display: block;
+    width: 100%;
+}
+.btn{
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    padding: 16px 48px 18px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+}
+.btn-green{
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 700;
+    background: $green;
+    color: white;
+    letter-spacing: 2px;
+    border-radius: 500px;
+    min-width: 160px;
+    border-width: 0px;
+    width: 100%;
+    padding: 16px 48px 18px 48px;
+    text-align: center;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+}
+.btn-green:hover{
+    background: #2FD567;
+    color: white;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+.primary{
+    font-size: .9375em;
+    display: block;
+    margin: 0 0 1em;
+    text-align: center;
 }

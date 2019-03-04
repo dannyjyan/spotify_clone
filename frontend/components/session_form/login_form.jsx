@@ -40,20 +40,64 @@ class LoginForm extends React.Component {
       return(
           <div className="login-form-container">
             {this.renderErrors()}
-            <form className="login-form" onSubmit={this.handleSubmit}>
-              <div>To continue, log in to Spotify.</div>
-              <div className="row">
-                <input type="text" value={this.state.username} placeholder="Email address or username" className="login-input" id="login-username"
-                onChange={this.update('username')}/>
+            <div className="login-header">
+              <div className="lh-scope">
+                <div className="login-head">  
+                  <Link to="/">
+                    <img className="spotify-logo-black" src={window.images.black_logo}/>
+                    <span className="chillify-login-text">Chillify</span>
+                  </Link>
+                </div>
               </div>
-              <div className="row">
-                <input type="password" value={this.state.password} placeholder="Password" className="login-input" id="login-password"
-                onChange={this.update('password')}/>
+            </div>
+            <div className="login-content">
+              <div className="login-to-continue">To continue, log in to Chillify.</div>
+                <div className="row">
+                  <div className="col-xs-12">
+                    <div className="divider"></div>
+                  </div>
+                </div>   
+              <form className="login-form" onSubmit={this.handleSubmit}>
+                <div className="row" >
+                  <div className="col-xs-12">
+                    <input type="text" value={this.state.username} placeholder="Email address or username" className="form-control login-input" id="login-username"
+                    onChange={this.update('username')}/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-xs-12">
+                      <input type="password" value={this.state.password} placeholder="Password" className="form-control login-input" id="login-password"
+                    onChange={this.update('password')}/>
+                    </div>
+                </div>
+                
+                <div className="row row-submit">
+                  <input type="submit" className="login-button btn-green" value="LOG IN"/>
+                </div>
+              </form>
+              <div className="show-signup">
+                <div className="row">
+                  <div className="col-xs-12">
+                    <div className="divider"></div>
+                  </div>
+                </div>   
+                <div className="row">
+                  <div className="col-xs-12">
+                    <h4 className="dont-have-account">Don't have an account?</h4>
+                  </div>
+                </div>   
+                <div>
+                  <div className="row">
+                    <div className="col-xs-12">
+                      <Link to="/signup" className="btn btn-block signup-button-white">SIGN UP FOR SPOTIFY</Link>
+                    </div>
+                  </div>   
+                </div>
+
+
               </div>
-              <div className="row row-submit">
-                <input type="submit" className="login-button" value="Log In"/>
-              </div>   
-            </form>
+              
+            </div>
           </div>
       )
     }

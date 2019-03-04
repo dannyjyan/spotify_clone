@@ -1,0 +1,95 @@
+@import "../base/colors.scss";
+
+.login-form-container{
+    background: #fff;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 900;
+
+}
+.spotify-logo-black{
+    height: 100px;
+    width: 100px;
+    // background-image: url(https://banner2.kisspng.com/20180723/che/kisspng-spotify-streaming-media-black-shout-spotify-logo-5b55719c8744d3.5093458315323263005541.jpg);
+}
+.login-head{
+    font-weight: 600;
+    font-size: 28px;
+    // margin: auto;
+    // top: 50%;
+    // transform: translateY(-50%);
+    border-bottom: 1px solid $off-white;
+    padding: 25px 0 10px;
+    margin-bottom: 30px;
+}
+.form-control{
+    font-size: 16px;
+    color: #222326;
+    border: 1px solid $off-white;
+    padding: 6px 12px;
+    width: 100%;
+    border-radius: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+}
+.login-input{
+    height: 40px
+}
+.login-content{
+    width: 450px;
+    display:block;
+    text-align: center;
+    margin: 0 auto;
+    height: 100%;
+}
+.col-xs-12{
+    display: block;
+    width: 100%;
+    float: left;
+    padding: 0 15px;
+    position: relative;
+}
+.row{
+    margin: 10px -15px;
+    display: block;
+    height: 40px;
+}
+.divider{
+    border-top: 1px solid #d9dadc;
+    display: block;
+    line-height: 1px;
+    margin: 15px 0;
+    position: relative;
+    text-align: center
+}
+.chillify-login-text{
+    top: 50%;
+    height: 100px;
+    color: black;
+    // margin-top: -50px;
+}
+.row:first-child{
+    margin-top: 0px;
+}
+.signup-button-white{
+    color: #616467;
+    box-shadow: inset 0 0 0 2px #616467;
+    background-color: transparent;
+    border-color: #333;
+}
+.signup-button-white:hover{
+    background-color:#333;
+    color: #FFF;
+}
+.dont-have-account{
+    font-size: 18px;
+}
+.row-submit{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}

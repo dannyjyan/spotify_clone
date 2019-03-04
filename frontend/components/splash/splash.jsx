@@ -10,8 +10,8 @@ class Splash extends React.Component{
                 <div className="splash-navbar-header">
                     <nav className="splash-navbar"> 
                         <Link to="/" className="splash-logo">
-                            <img className="spotify-logo" />
-                            <span>Chillify</span>
+                            <img className="spotify-logo" src={window.images.green_logo}/>
+                            <span className="chillify-logo-text">Chillify</span>
                         </Link>
                         <ul className="splash-navbar-right">
                             <li>Premium</li>
@@ -33,7 +33,7 @@ class Splash extends React.Component{
                         <h4>
                             Millions of songs. No credit card needed.
                         </h4>
-                        <Link to="/signup" className="signup-button">
+                        <Link to="/signup" className="btn-green signup-button">
                             GET SPOTIFY FREE
                         </Link>
 
@@ -46,8 +46,8 @@ class Splash extends React.Component{
             <footer className="footer">
                 <div className="footer-container">
                     <Link to="/" className="splash-logo">
-                        <img className="spotify-logo" />
-                        <span>Chillify</span>
+                        <img className="spotify-logo" src={window.images.green_logo}/>
+                        <span className="chillify-logo-text">Chillify</span>
                     </Link>
                     <ul className="footer-links">
                         <li>Link1</li>

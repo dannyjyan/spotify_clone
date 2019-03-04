@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 
 class SignupForm extends React.Component {
 
@@ -8,6 +9,7 @@ class SignupForm extends React.Component {
         username: "",
         password: "",
         email: "",
+        confirmEmail: ""
       };
       this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -15,7 +17,7 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.signup(user);
+        this.props.signup(user)
     }
     update(field) {
       return e => this.setState({
@@ -36,30 +38,71 @@ class SignupForm extends React.Component {
 
     render(){
         return(
-            <div className="signup-form-container">
-              {this.renderErrors()}
-              <div>Sign up with your email address.</div>
-              <form className="signup-form" onSubmit={this.handleSubmit}>
-                <ul>
-                    <li>
-                        <input type="email" value={this.state.email} placeholder="Email" className="signup-input" id="signup-email"
-                    onChange={this.update('email')}/>
-                    </li>
-                    <li>
-                        <input type="password" value={this.state.password} placeholder="Password" className="signup-input" id="signup-password"
-                        onChange={this.update('password')}/>
-                    </li>
-                    <li>
-                        <input type="text" value={this.state.username} placeholder="What should we call you?" className="signup-input" id="signup-username"
-                        onChange={this.update('username')}/>
-                    </li>
-
-                    <div className="row row-submit">
-                        <input type="submit" className="signup-button" value="Sign Up"/>
-                    </div>   
-                </ul>
-              </form>
+          <div className="sign-up">
+            {this.renderErrors()}
+            <div className="login-header">
+              <div className="lh-scope">
+                <div className="login-head">  
+                  <Link to="/">
+                    <img className="spotify-logo-black" src={window.images.black_logo}/>
+                    <span className="chillify-login-text">Chillify</span>
+                  </Link>
+                </div>
+              </div>
             </div>
+            <div className="login-content">
+              <div className="signup-to-continue">Sign up with your email address</div>
+              <form className="login-form" onSubmit={this.handleSubmit}>
+                <div className="signup-row" >
+                  <div className="col-xs-12">
+                    <input type="email" value={this.state.email} placeholder="Email" className="form-control signup-input"
+                    onChange={this.update('email')}/>
+                    </div>
+                </div>
+                <div className="signup-row" >
+                  <div className="col-xs-12">
+                    <input type="email" value={this.state.confirmEmail} placeholder="Confirm Email" className="form-control signup-input" 
+                    onChange={this.update('confirmEmail')}/>
+                    </div>
+                </div>
+                <div className="signup-row">
+                    <div className="col-xs-12">
+                      <input type="password" value={this.state.password} placeholder="Password" className="form-control signup-input" 
+                    onChange={this.update('password')}/>
+                    </div>
+                </div>
+                <div className="signup-row">
+                    <div className="col-xs-12">
+                      <input type="text" value={this.state.username} placeholder="What should we call you?" className="form-control signup-input" 
+                    onChange={this.update('username')}/>
+                    </div>
+                </div>
+
+                <div className="signup-row row-submit">
+                  <div className="col-xs-12">
+                    <input type="submit" className="btn-green" value="SIGN UP"/>
+                  </div>
+                </div>
+              </form>
+              <div className="show-signup">
+                <div className="row">
+                  <div className="col-xs-12">
+                    <div className="divider"></div>
+                  </div>
+                </div>   
+                <div className="row">
+                  <div className="col-xs-12">
+                    <p className="primary">Already have an account?                    
+                      <Link to="/login" className="login-button-small"> Login in</Link>
+                    </p>
+                  </div>
+                </div>   
+
+
+              </div>
+              
+            </div>
+          </div>
         )
   
     }

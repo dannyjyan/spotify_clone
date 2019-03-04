@@ -10,6 +10,7 @@ class LoginForm extends React.Component {
         password: ""
       };
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.demoLogin = this.demoLogin.bind(this);
     }
 
     handleSubmit(e) {
@@ -34,6 +35,10 @@ class LoginForm extends React.Component {
           })}
         </ul>
       )
+    }
+    demoLogin(){
+      const user = Object.assign({}, {username: 'Corgi', password:'password'});
+      this.props.login(user);
     }
 
     render(){
@@ -73,6 +78,9 @@ class LoginForm extends React.Component {
                 
                 <div className="row row-submit">
                   <input type="submit" className="login-button btn-green" value="LOG IN"/>
+                </div>
+                <div className="row row-submit">
+                  <input type="button" className="login-button btn-green" value="DEMO" onClick={this.demoLogin}/>
                 </div>
               </form>
               <div className="show-signup">

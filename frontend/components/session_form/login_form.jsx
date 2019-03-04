@@ -37,8 +37,11 @@ class LoginForm extends React.Component {
       )
     }
     demoLogin(){
-      const user = Object.assign({}, {username: 'Corgi', password:'password'});
-      this.props.login(user);
+      this.setState({username: 'Corgi', password: 'password'});
+      setTimeout(() => {
+        const user = Object.assign({}, {username: 'Corgi', password:'password'});
+        this.props.login(user);
+        }, 1000);
     }
 
     render(){
@@ -48,7 +51,7 @@ class LoginForm extends React.Component {
             <div className="login-header">
               <div className="lh-scope">
                 <div className="login-head">  
-                  <Link to="/">
+                  <Link to="/" className="form-home-link">
                     <img className="spotify-logo-black" src={window.images.black_logo}/>
                     <span className="chillify-login-text">Chillify</span>
                   </Link>

@@ -66,6 +66,7 @@ a:hover{
     display: flex;
     font-weight: 400px;
     height: 40px;
+    align-content: center;
 }
 .nav-divider{
     font-weight: 200;
@@ -135,5 +136,6 @@ a:hover{
     
 }
 .chillify-logo-text{
+    display: flex;
     align-self: center;
 }

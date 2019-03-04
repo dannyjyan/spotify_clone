@@ -19,9 +19,6 @@
 .login-head{
     font-weight: 600;
     font-size: 28px;
-    // margin: auto;
-    // top: 50%;
-    // transform: translateY(-50%);
     border-bottom: 1px solid $off-white;
     padding: 25px 0 10px;
     margin-bottom: 30px;
@@ -70,7 +67,6 @@
     top: 50%;
     height: 100px;
     color: black;
-    // margin-top: -50px;
 }
 .row:first-child{
     margin-top: 0px;
@@ -90,7 +86,12 @@
 }
 .row-submit{
     display: block;
-    margin: 15px auto;
+    margin: 0 auto 15px;
     width: 100%;
 }
+// .form-home-link{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//   }
 

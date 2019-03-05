@@ -68,7 +68,7 @@ a:hover{
 .splash-logo{
     padding-left: 100px;
     display: flex;
-    font-weight: 400px;
+    font-weight: 400;
     height: 40px;
     align-content: center;
 }
@@ -90,13 +90,23 @@ a:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;    
-    margin: 0 97.5px;
+    // margin: 0 97.5px;
+    margin: 0;
+    overflow: hidden;
     position: relative;
     min-height: 100%;
     // font: extra-bold;
 }
-.splash-main h1{
-    font-size: 80px;
+.splash-main{ 
+    h1 {
+        font-size: 80px;
+        margin-bottom: 18px;
+    }
+    h4{
+        margin: 9px 0 18px 0;
+        font-weight: 400;
+        font-size: 18px;    
+    }
 }
 .signup-button{
     margin-top: 16px;
@@ -109,16 +119,9 @@ a:hover{
     height: 48px;
     text-align: center;
 }
-.splash-main > h4{
-    margin: 9px 0 18px 0;
-    font-weight: 400;
-    font-size: 18px;
-
+.splash-section{
+    height: 100%;
 }
-.splash-main > h1{
-    margin-bottom: 18px;
-}
-
 .footer{
     padding: 80px 0 50px 0;
     background-color: #000;
@@ -131,7 +134,7 @@ a:hover{
     display: flex;
 }
 .footer-container{
-    height: 450px;
+    height: 100%;
     display:flex;
     justify-content: space-between;
     color: $off-white;

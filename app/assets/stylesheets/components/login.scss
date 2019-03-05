@@ -22,6 +22,9 @@
     border-bottom: 1px solid $off-white;
     padding: 25px 0 10px;
     margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+
 }
 .form-control{
     font-size: 16px;
@@ -65,7 +68,6 @@
 }
 .chillify-login-text{
     top: 50%;
-    height: 100px;
     color: black;
 }
 .row:first-child{

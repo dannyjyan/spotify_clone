@@ -23,9 +23,12 @@ class Splash extends React.Component{
                             </ul>
                         </nav>
                     </div>
-                    <section>
+                    <section className="splash-section">
                         <div className="splash-main">
-                            <div className="splash-background"> </div>
+                            {/* <div className="splash-background-wrap"> */}
+                                <div className="splash-background">
+                                </div>
+                            {/* </div> */}
                             <h1>
                                 Music for everyone.
                             </h1>

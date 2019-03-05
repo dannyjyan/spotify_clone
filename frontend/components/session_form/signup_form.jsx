@@ -47,7 +47,7 @@ class SignupForm extends React.Component {
             <div className="login-header">
               <div className="lh-scope">
                 <div className="login-head">  
-                  <Link to="/">
+                  <Link to="/" className="form-home-link">
                     <img className="spotify-logo-black" src={window.images.black_logo}/>
                     <span className="chillify-login-text">Chillify</span>
                   </Link>

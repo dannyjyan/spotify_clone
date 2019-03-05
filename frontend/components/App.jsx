@@ -23,7 +23,7 @@ export const App = () => {
         <Switch> 
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-            <Route exact path="/" component={SplashContainer} />
+            <Route path="/" component={SplashContainer} />
         </Switch>
     </>
 )}

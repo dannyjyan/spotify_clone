@@ -39,7 +39,7 @@ class LoginForm extends React.Component {
     demoLogin(){
       this.setState({username: 'Corgi', password: 'password'});
       setTimeout(() => {
-        const user = Object.assign({}, {username: 'Corgi', password:'password'});
+        const user = Object.assign({}, this.state);
         this.props.login(user);
         }, 1000);
     }

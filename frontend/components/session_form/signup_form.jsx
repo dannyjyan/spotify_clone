@@ -45,9 +45,12 @@ class SignupForm extends React.Component {
           </ul>
         )
     }
-    componentWillUnmount(){
-      //dispatch action to hit reducer 
-    }
+    // componentWillUnmount(){
+      //dispatch action to hit reducer errors
+      // dispatch({
+      //   type: 'RESET_SESSION_ERRORS'
+      // });
+    // }
 
     render(){
         return(

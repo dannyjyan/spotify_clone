@@ -2,7 +2,7 @@ class User < ApplicationRecord
     validates :username, :password_digest, :session_token, :email, presence: true 
     validates :username, :session_token, :email, uniqueness: true
     validates :password, length: {minimum: 6, allow_nil: true}
-    # validates :email, inclusion: {in: [:confirmEmail]}
+    validates :email, inclusion: {in: [:confirmEmail]}, on: :create
 
     has_many :playlists
 
@@ -18,7 +18,6 @@ class User < ApplicationRecord
 
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
-        # user.confirmEmail = user.email
         return nil unless user 
         return user if user.is_password?(password)
     end

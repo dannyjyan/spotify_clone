@@ -45,12 +45,12 @@ class SignupForm extends React.Component {
           </ul>
         )
     }
-    // componentWillUnmount(){
-      //dispatch action to hit reducer errors
+    componentWillUnmount(){
+      // dispatch action to hit reducer errors
       // dispatch({
       //   type: 'RESET_SESSION_ERRORS'
       // });
-    // }
+    }
 
     render(){
         return(
@@ -109,7 +109,7 @@ class SignupForm extends React.Component {
                 <div className="row">
                   <div className="col-xs-12">
                     <p className="primary">Already have an account?                    
-                      <Link to="/login" className="login-button-small"> Login in</Link>
+                      <Link to="/login" className="login-button-small"> Login </Link>
                     </p>
                   </div>
                 </div>   

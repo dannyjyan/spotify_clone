@@ -25,10 +25,11 @@ class Splash extends React.Component{
                     </div>
                     <section className="splash-section">
                         <div className="splash-main">
-                            {/* <div className="splash-background-wrap"> */}
                                 <div className="splash-background">
                                 </div>
-                            {/* </div> */}
+                                <div className="splash-background-gradient">
+                                </div>
+
                             <h1>
                                 Music for everyone.
                             </h1>
@@ -51,13 +52,20 @@ class Splash extends React.Component{
                         <ul className="footer-links">
                             <li>
                                 <a href="https://github.com/dannyjyan"> 
-                                    <svg height="54" width="54">
-                                        <circle cx="27" cy="27" r="27" stroke="black"  fill="#222325"></circle>
-                                        <use src={window.images.linked_in} height="24px" width="24px"></use>
-                                    </svg>
+                                    <img height="24" width="24" src={window.images.github}>    
+                                        {/* <circle cx="27" cy="27" r="27" stroke="black"  fill="#222325"></circle> */}
+                                        {/* <use src={window.images.linked_in} height="24px" width="24px"></use> */}
+                                    </img>
                                 </a>
                             </li>
-                            <li><a href="https://www.linkedin.com/in/danny-j-yan/">LinkedIn</a></li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/danny-j-yan/">
+                                    <img height="24" width="24" src={window.images.linked_in}>
+                                        {/* <circle cx="27" cy="27" r="27" stroke="black"  fill="#222325"></circle> */}
+                                        {/* <use src={window.images.linked_in} height="24px" width="24px"></use> */}
+                                    </img>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </footer>

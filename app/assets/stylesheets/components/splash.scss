@@ -17,6 +17,17 @@
     width: 878px;
     height: 676px;
 }
+.splash-background-gradient{
+    background: linear-gradient(#F037A5 -60%, #FAE62D 140%);
+    background-size: auto;
+    position: absolute;
+    width: 1610px;
+    height: 1523px;
+    z-index: -110;
+    width: 100%;
+
+}
+
 
 @media (min-width: 992px) {
     .splash-background{
@@ -27,11 +38,6 @@
         z-index: -100;
         background-size: auto;
         overflow: hidden;
-
-        // background-position: top -410px center;
-        // -webkit-transform: translate(-50%, 0%);
-        // -ms-transform: translate(-50%, 0%);
-        // transform: translate(-50%, 0%);
     }
 }
 
@@ -123,7 +129,7 @@ a:hover{
     height: 100%;
 }
 .footer{
-    padding: 80px 0 50px 0;
+    padding: 80px 100px 50px 100px;
     background-color: #000;
     background-size: auto;
     width:100%;
@@ -138,7 +144,29 @@ a:hover{
     display:flex;
     justify-content: space-between;
     color: $off-white;
-    
+
+}
+.footer-links {
+    li {
+        width: 72px;
+        a{
+            background: #222325;
+            -webkit-transition: none;
+            transition: none;
+            border-radius: 50%;
+            margin-bottom: .75em;
+            padding: 15px;
+            width: 54px;
+            display: block;
+            height: 54px
+        }   
+        a:hover{
+            color: green;
+        }
+    }
+    li:last-child{
+
+    }
 }
 .chillify-logo-text{
     display: flex;
@@ -151,6 +179,12 @@ a:hover{
 }
 .splash-home-page{
     height: inherit;
+    // background-color: #F037A5;
+    // background: -webkit-gradient(linear, left top, left bottom, color-stop(-60%, #F037A5), color-stop(140%, #FAE62D));
+    // background: linear-gradient(#F037A5 -60%, #FAE62D 140%);
+    // padding-bottom: 20px;
+    // z-index: -100000;
+    // position: relative
 }
 .social-icon {
     width: 24px;

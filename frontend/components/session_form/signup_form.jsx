@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
+import merge from 'lodash/merge';
 
 class SignupForm extends React.Component {
 
@@ -9,17 +10,21 @@ class SignupForm extends React.Component {
         username: "",
         password: "",
         email: "",
-        confirmEmail: ""
+        confirmEmail: "",
+        // errors: this.props.errors.slice()
       };
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.renderErrors = this.renderErrors.bind(this);
     }
+
 
     handleSubmit(e) {
         e.preventDefault();
-        if (this.state.email !== this.state.confirmEmail){
-          console.log("emails dont match");
-          return;
-        }
+        // if (this.state.email !== this.state.confirmEmail){
+        //   const newErrors = merge({}, {errors: this.props.errors}, {errors: ["Emails do not match"]})
+        //   this.setState(newErrors)
+        //   return;
+        // }
         const user = Object.assign({}, this.state);
         this.props.signup(user)
     }
@@ -29,6 +34,7 @@ class SignupForm extends React.Component {
       });
     }
     renderErrors(){
+      // const allErrors = merge({}, {errors: this.props.errors}, {errors: this.state.errors})
         return (
           <ul>
             {this.props.errors.map((error, idx)=> {
@@ -38,7 +44,10 @@ class SignupForm extends React.Component {
             })}
           </ul>
         )
-      }
+    }
+    componentWillUnmount(){
+      //dispatch action to hit reducer 
+    }
 
     render(){
         return(

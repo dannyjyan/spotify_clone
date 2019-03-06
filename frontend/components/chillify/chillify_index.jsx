@@ -1,6 +1,6 @@
 import React from 'react';
-import SplashContainer from '../splash/splash_container';
-import {NavBar} from './navbar'
+import {NavBar} from './navbar';
+import {ChillifyMain} from './chillify_main';
 import {
     Route,
     Redirect,
@@ -16,9 +16,6 @@ export const ChillifyIndex = () => {
             <div className="top-container"> 
                 <NavBar />
                 <ChillifyMain />
-                <div className="main-view">
-                
-                </div>   
             </div>
             <div className="now-playing-bar">
                 NOW PLAYING COMPONENT

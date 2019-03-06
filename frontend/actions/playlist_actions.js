@@ -14,9 +14,9 @@ const receivePlaylists = playlists => ({
     playlists
 })
 
-const removePlaylist = id => ({
+const removePlaylist = (id) => ({
     type: REMOVE_PLAYLIST,
-    playlistId: id
+    id
 })
 
 //change later for search
@@ -33,8 +33,8 @@ export const fetchPlaylist = id => dispatch => (
 )
 
 export const deletePlaylist = id => dispatch => (
-    PlaylistApiUtil.deletePlaylist(id).then(playlist => (
-        dispatch(removePlaylist(playlist))
+    PlaylistApiUtil.deletePlaylist(id).then(() => (
+        dispatch(removePlaylist(id))
     ))
 )
 

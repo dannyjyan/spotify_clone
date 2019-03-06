@@ -1,8 +1,5 @@
-json.set! @playlist.id do 
-    json.partial! 'api/playlists/playlist', playlist: @playlist 
-end 
-# json.songIds @playlist.songs.pluck(:id)
-
+json.partial! 'api/playlists/playlist', playlist: @playlist
+json.songIds @playlist.songs.pluck(:id)
 # @playlist.songs.each do |song| 
 #     json.songs do 
 #         json.partial! 'api/songs/song', song: song

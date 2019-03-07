@@ -2,7 +2,7 @@ class User < ApplicationRecord
     validates :username, :password_digest, :session_token, :email, presence: true 
     validates :username, :session_token, :email, uniqueness: true
     validates :password, length: {minimum: 6, allow_nil: true}
-    validates :email, inclusion: {in: [:confirmEmail]}, on: :create
+    validate :email_matches, on: :create
 
     has_many :playlists
 
@@ -22,6 +22,12 @@ class User < ApplicationRecord
         return user if user.is_password?(password)
     end
     #validate :function name, return string??
+    def email_matches()
+        if email != confirmEmail 
+            errors.add('Emails do not match')
+        end 
+    end 
+
 
     def confirmEmail=(email) 
         @confirmEmail = email

@@ -1,8 +1,33 @@
 .nav-bar-container{
     background: rgba(0,0,0,.8);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    z-index: 4;
+    background-color: rgba(0,0,0,.8);
+    overflow: auto;
+    min-height: 0!important;
+    will-change: transform;
+    padding-bottom: 90px;
 }
 .welcome-message{
     color: white;
     font-weight: 700;
     font-size: 20px;
+}
+.main-view{
+    padding: 0 0 121px 230px;
+    width: 100%;
+    min-height: 0 !important;
+}
+.nav-bar{
+    padding-top: 24px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    width: 230px;
+    cursor: default;
 }

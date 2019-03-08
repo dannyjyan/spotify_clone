@@ -1,6 +1,6 @@
 import React from 'react';
 import SplashContainer from './splash/splash_container';
-import {ChillifyIndex} from './chillify/chillify_index';
+import ChillifyIndex from './chillify/chillify_index';
 import { withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 

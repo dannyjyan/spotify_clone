@@ -2,8 +2,28 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 class Splash extends React.Component{
 
+    constructor(props){
+        super(props)
+        this.state = {
+            songs: []
+        }
+        this.fetchSong = this.fetchSong.bind(this)
+    }
+
+    fetchSong() {
+        $.ajax({
+            url: "api/songs/1"
+        }).then(songs => {
+            debugger
+            this.setState(songs)
+        })
+    }
+    componentDidMount(){
+        // this.fetchSong(1);
+    }
+
     render(){
-       return ( 
+       return (  
         <div className="splash-home-page">
             <div className="wrap">
                 <div className="splash-container">

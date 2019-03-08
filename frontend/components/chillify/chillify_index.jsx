@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavBar} from './navbar';
-import {ChillifyMain} from './chillify_main';
+import ChillifyMainContainer from './chillify_main_container';
+import NowPlaying from '../now_playing';
 import {
     Route,
     Redirect,
@@ -10,17 +11,21 @@ import {
   } from 'react-router-dom';
 
 
-export const ChillifyIndex = () => {
-    return (
-        <>
-            <div className="top-container"> 
-                <NavBar />
-                <ChillifyMain />
-            </div>
-            <div className="now-playing-bar">
-                NOW PLAYING COMPONENT
-            </div>
+class ChillifyIndex extends React.Component{ 
+      
+    render() {
+        return (
+            <>
+                <div className="top-container"> 
+                    <NavBar />
+                    <ChillifyMainContainer />
+                </div>
+                <div className="Root-now-playing-bar">
+                    <NowPlaying />
 
-        </>
-    )
+                </div>                
+            </>
+        )
+    }
 }
+export default ChillifyIndex; 

@@ -2,10 +2,12 @@ import React from 'react';
 
 
 
-export const PlaylistIndexItem = () => {
+export const PlaylistIndexItem = ({playlist}) => {
 
     return(
-        <h2>PLAYLIST NAME</h2>
+        <div key={playlist.id}>{playlist.name}
+            
+        </div>
     )
 }
 

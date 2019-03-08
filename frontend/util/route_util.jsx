@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect, withRouter} from 'react-router-dom';
 import SplashContainer from '../components/splash/splash_container';
-import {ChillifyIndex} from '../components/chillify/chillify_index';
+import ChillifyIndex from '../components/chillify/chillify_index';
 
 
 // renders component if logged out, otherwise redirects to the root url

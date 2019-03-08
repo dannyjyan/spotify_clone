@@ -5,7 +5,7 @@ import Root from './components/root';
 import {login, logout} from './actions/session_actions'
 import configureStore from './store/store';
 import {fetchPlaylists, fetchPlaylist, deletePlaylist, createPlaylist} from './actions/playlist_actions'
-
+import {fetchSongs, fetchAlbums} from './actions/song_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     // configure store
@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
          store = configureStore();
     }
     //test
+    window.fetchSongs = fetchSongs;
+    window.fetchAlbums = fetchAlbums;
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     // end test

@@ -14,6 +14,10 @@ danny = User.create(username: "Danny", email: "danny@danny.com", password: "dann
 #Playlists
 doggy_tunes = Playlist.create(name: "Doggy Tunes", user_id: corgi.id)
 best_ariana = Playlist.create(name: "Best of Ariana Grande", user_id: corgi.id)
+who_let_pl = Playlist.create(name: "Who Let the Dogs Out", user_id: corgi.id)
+young_wild_pl = Playlist.create(name: "Young and Wild and Free", user_id: corgi.id)
+drop_it = Playlist.create(name: "R&G (Rhythm and Gangsta): The Masterpiece", user_id: corgi.id)
+lungs_pl = Playlist.create(name: "Lungs", user_id: corgi.id)
 
 #Artists
 florence = Artist.create(name: "Florence + the Machine")
@@ -47,17 +51,20 @@ PlaylistSong.create(song_id: dog_years.id, playlist_id: doggy_tunes.id)
 PlaylistSong.create(song_id: young.id, playlist_id: doggy_tunes.id) 
 PlaylistSong.create(song_id: drop_it.id, playlist_id: doggy_tunes.id) 
 PlaylistSong.create(song_id: seven.id, playlist_id: best_ariana.id)
-PlaylistSong.create(song_id: thank_u.id, playlist_id: best_ariana.id)
-PlaylistSong.create(song_id: bad_idea.id, playlist_id: best_ariana.id)
+PlaylistSong.create(song_id: who_let.id, playlist_id: who_let_pl.id)
+PlaylistSong.create(song_id: young.id, playlist_id: young_wild_pl.id)
+PlaylistSong.create(song_id: drop_it.id, playlist_id: drop_it.id)
+PlaylistSong.create(song_id: dog_years.id, playlist_id: lungs_pl.id)
+
 
 #Add audio to songs
 dog_days.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/FlorenceandTheMachine-DogDaysAreOver.mp3"), filename: "FlorenceandTheMachine-DogDaysAreOver.mp3")
 who_let.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Baha Men - Who Let The Dogs Out.mp3"), filename: "Baha Men - Who Let The Dogs Out.mp3")
 dog_years.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Maggie Rogers - Dog Years.mp3"), filename: "Maggie Rogers - Dog Years.mp3")
 young.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Snoop Dogg - Young, Wild and Free.mp3"), filename: "Snoop Dogg - Young, Wild and Free.mp3")
-drop_it.audio.attach(io: File.open("/Users/Danny/Documents/app_academy//full_stack/audio/Snoop Dogg  - Drop It Like It's Hot.mp3"), filename: "Snoop Dogg  - Drop It Like It's Hot.mp3")
-seven.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/ProjeProjectscts/full_stack/audio/Ariana Grande - 7 rings.mp3"), filename: "Ariana Grande - 7 rings.mp3")
-thank_u.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Ariana Grande - thank u, next"), filename: "Ariana Grande - thank u, next.mp3")
+drop_it.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Snoop Dogg  - Drop It Like It's Hot.mp3"), filename: "Snoop Dogg  - Drop It Like It's Hot.mp3")
+seven.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Ariana Grande - 7 rings.mp3"), filename: "Ariana Grande - 7 rings.mp3")
+thank_u.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Ariana Grande - thank u, next.mp3"), filename: "Ariana Grande - thank u, next.mp3")
 bad_idea.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Ariana Grande - bad idea.mp3"), filename: "Ariana Grande - bad idea.mp3")
 
 #Add images to Albums

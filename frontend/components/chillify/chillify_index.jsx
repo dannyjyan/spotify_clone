@@ -1,5 +1,7 @@
 import React from 'react';
 import {NavBar} from './navbar';
+import {AuthRoute, ProtectedRoute, RootRoute} from '../../util/route_util';
+
 import ChillifyMainContainer from './chillify_main_container';
 import NowPlaying from '../now_playing';
 import {

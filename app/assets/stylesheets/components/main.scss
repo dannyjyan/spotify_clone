@@ -12,6 +12,7 @@
     padding: 0 32px;
     margin: 0 auto;
     max-width: 1480px;
+    height: 100%;
 }
 .main-content-nav{
     width: 100%;
@@ -56,7 +57,6 @@
     margin-left: auto;
     padding-left: 8px;
     padding-right: 8px;
-    display: table;
 }
 .grid-container-playlist{
     display: -webkit-box;
@@ -69,4 +69,36 @@
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
+    min-height: 400px;
+}
+.playlist-index-item{
+    width: 16.6%;
+    height: 16vh;
+    padding: 0 8px;
+    background-size: cover;
+    float: left;
+    margin: 10px;
+}
+.playlist-index-item:hover{
+    background-size: cover;
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.playlist-index-item:before{
+    content: "";
+    display:block;
+    padding-top:100%;
+}
+.cover-art-link{
+    width: 300px;
+    height: 300px;
+    background-color: blue;
+}
+.cover-art-image{
+}
+.media-item{
+}
+#text{
+    display:flex
 }

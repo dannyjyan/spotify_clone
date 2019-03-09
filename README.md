@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Chillify
+[Live Site](https://chillify.herokuapp.com)
 
-* Ruby version
+## What is Chillify? 
+Chillify is a music and songs player that features live
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Technologies
+* Frontend: React/Redux
+* Backend: Ruby on Rails
+* DB: Postgres
+* Styling: HTML and CSS 

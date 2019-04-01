@@ -100,7 +100,7 @@ class LoginForm extends React.Component {
                 <div>
                   <div className="row">
                     <div className="col-xs-12">
-                      <Link to="/signup" className="btn btn-block signup-button-white">SIGN UP FOR SPOTIFY</Link>
+                      <Link to="/signup" className="btn btn-block signup-button-white">SIGN UP FOR CHILLIFY</Link>
                     </div>
                   </div>   
                 </div>

@@ -57,7 +57,7 @@ class Splash extends React.Component{
                                 Millions of songs. No credit card needed.
                             </h4>
                             <Link to="/signup" className="btn-green signup-button">
-                                GET SPOTIFY FREE
+                                GET CHILLIFY FREE
                             </Link>
                         </div>
                     </section>

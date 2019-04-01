@@ -3,7 +3,7 @@ import {NavBar} from './navbar';
 import {AuthRoute, ProtectedRoute, RootRoute} from '../../util/route_util';
 
 import ChillifyMainContainer from './chillify_main_container';
-import NowPlaying from '../now_playing';
+import NowPlayingContainer from '../nowPlaying/now_playing_container';
 import {
     Route,
     Redirect,
@@ -23,7 +23,7 @@ class ChillifyIndex extends React.Component{
                     <ChillifyMainContainer />
                 </div>
                 <div className="Root-now-playing-bar">
-                    <NowPlaying />
+                    <NowPlayingContainer />
 
                 </div>                
             </>

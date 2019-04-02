@@ -13,7 +13,7 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import SplashContainer from './splash/splash_container';
 import {AuthRoute, ProtectedRoute, RootRoute} from '../util/route_util';
 import {MainComponent} from './Main';
-  
+
 
 export const App = () => {
     return (

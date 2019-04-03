@@ -8,7 +8,7 @@ import {fetchPlaylists, fetchPlaylist, deletePlaylist, createPlaylist} from './a
 import {fetchSongs, fetchAlbums} from './actions/song_actions';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay, faIgloo, faPause, faVolumeUp, faVolumeMute } from '@fortawesome/free-solid-svg-icons'
+import { faPlay, faIgloo, faPause, faVolumeUp, faVolumeMute, faStepBackward, faStepForward} from '@fortawesome/free-solid-svg-icons'
 
 document.addEventListener('DOMContentLoaded', () => {
     // configure store
@@ -30,10 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
     library.add(faPause)
     library.add(faVolumeUp)
     library.add(faVolumeMute)
+    library.add(faStepBackward)
+    library.add(faStepForward)
     //test
+    
     // window.fetchSongs = fetchSongs;
     // window.fetchAlbums = fetchAlbums;
-    // window.getState = store.getState;
+    window.getState = store.getState;
     // window.dispatch = store.dispatch;
     // end test
     const root = document.getElementById("root");

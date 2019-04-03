@@ -58,6 +58,9 @@
             flex-direction: row;
 
             .control-button{
+                display: flex;
+                justify-content: center;
+                align-items: center ;
                 border: none;
                 color: #b3b3b3;
                 width: 32px;

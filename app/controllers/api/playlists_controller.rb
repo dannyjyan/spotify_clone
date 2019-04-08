@@ -1,7 +1,17 @@
 class Api::PlaylistsController < ApplicationController
     before_action :require_logged_in
     def index
-      @playlists = Playlist.all
+      if params[:userId]
+        user = User.find(params[:userId]);
+        @playlists = user.playlists;
+        # Playlist.where(user_id: params[:userId])
+
+        
+      else 
+        @playlists = Playlist.all
+      end 
+
+      # render "api/playlists"
     end
 
     def create

@@ -3,14 +3,12 @@ import merge from 'lodash/merge';
 
 const albumsReducer = (state = {}, action) => {
     Object.freeze(state);
-    // console.log(action)
-    // debugger
     let newState = Object.assign({}, state)
     switch(action.type){
-        case RECEIVE_ALBUMS:
-            return action.albums;
-        default:
-            return state;
+      case RECEIVE_ALBUMS:
+        return merge(newState, action.albums);
+      default:
+        return newState;
     }
 }
 

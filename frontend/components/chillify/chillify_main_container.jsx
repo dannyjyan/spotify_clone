@@ -6,15 +6,15 @@ import {fetchSongs, fetchAlbums} from '../../actions/song_actions';
 const mapStateToProps = ({entities, session}) => {  
     return ({
         currentUser: entities.users[session.id],
-        playlists: Object.values(entities.playlists),
-        songs: Object.values(entities.songs),
+        playlists: entities.playlists,
+        songs: entities.songs,
         albums: Object.values(entities.albums),
     
     })
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchPlaylists: () => dispatch(fetchPlaylists()),
+    fetchPlaylists: (userId) => dispatch(fetchPlaylists(userId)),
     fetchSongs: () => dispatch(fetchSongs()),
     fetchAlbums: () => dispatch(fetchAlbums())
 })

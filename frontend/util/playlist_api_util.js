@@ -1,8 +1,9 @@
 
-export const fetchPlaylists = () =>  (
+export const fetchPlaylists = (userId) =>  (
     $.ajax({
+        data: {userId},
         method: "GET",
-        url: "api/playlists",
+        url: "api/playlists"
     })
 )
 export const fetchPlaylist = id => (

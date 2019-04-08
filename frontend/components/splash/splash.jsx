@@ -14,7 +14,6 @@ class Splash extends React.Component{
         $.ajax({
             url: "api/songs/1"
         }).then(songs => {
-            debugger
             this.setState(songs)
         })
     }

@@ -16,3 +16,9 @@ export const fetchAlbums = () => (
         url: `api/albums`
     })
 )
+export const fetchArtists = () => (
+    $.ajax({
+      method: "GET",
+      url: `api/artists`
+  })
+)

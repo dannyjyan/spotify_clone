@@ -17,7 +17,7 @@ best_ariana = Playlist.create(name: "Best of Ariana Grande", user_id: corgi.id)
 who_let_pl = Playlist.create(name: "Who Let the Dogs Out", user_id: corgi.id)
 young_wild_pl = Playlist.create(name: "Young and Wild and Free", user_id: corgi.id)
 drop_it = Playlist.create(name: "R&G (Rhythm and Gangsta): The Masterpiece", user_id: corgi.id)
-lungs_pl = Playlist.create(name: "Lungs", user_id: corgi.id)
+lungs_pl = Playlist.create(name: "Lungs", user_id: danny.id)
 
 #Artists
 florence = Artist.create(name: "Florence + the Machine")

@@ -20,8 +20,8 @@ const removePlaylist = (id) => ({
 })
 
 //change later for search
-export const fetchPlaylists = () => dispatch => (
-    PlaylistApiUtil.fetchPlaylists().then(playlists => (
+export const fetchPlaylists = (userId) => dispatch => (
+    PlaylistApiUtil.fetchPlaylists(userId).then(playlists => (
         dispatch(receivePlaylists(playlists))
     ))
 )

@@ -18,6 +18,7 @@ class NowPlaying extends React.Component{
         }
         // this.props.fetchSongs();
         this.defaultColor = '#b3b3b3';
+        this.getImageUrl = this.getImageUrl.bind(this);
         this.hoverColor = '#1db954';
         this.onClickProgress = this.onClickProgress.bind(this);
         this.onClickVolume = this.onClickVolume.bind(this);
@@ -97,6 +98,11 @@ class NowPlaying extends React.Component{
     updateTime(timeStamp){
         timestamp = Math.floor(timestamp);
 		this.setState({ currentTime: timestamp });
+    }
+    getImageUrl(songId){
+        let {songs, albums} = this.state;
+        let albumId = songs[songId].album_id;
+        return albums[albumId].imageUrl
     }
 
     render(){

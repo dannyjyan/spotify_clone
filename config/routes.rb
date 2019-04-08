@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :albums, only: [:index]
+    resources :artists, only: [:index]
     resources :songs, only: [:show, :index]
     resources :users, only: [:create]
     resource :session, only: [:destroy, :create]

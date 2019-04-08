@@ -68,7 +68,7 @@ class LoginForm extends React.Component {
               <form className="login-form" onSubmit={this.handleSubmit}>
                 <div className="row" >
                   <div className="col-xs-12">
-                    <input type="text" value={this.state.username} placeholder="Email address or username" className="form-control login-input" id="login-username"
+                    <input type="text" value={this.state.username} placeholder="Username" className="form-control login-input" id="login-username"
                     onChange={this.update('username')}/>
                     </div>
                 </div>

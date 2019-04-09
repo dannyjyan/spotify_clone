@@ -15,25 +15,27 @@ import {
 
 
 class ChillifyIndex extends React.Component{ 
-      
+
     render() {
         return (
             <>
-                <div className="top-container"> 
+                <div className="top-container"   > 
                     <NavBar />
                     <div className="main-view">
                       <div className="main-view-container">
-                        <Switch>
-                          <Route
-                            path="/playlist/:playlistId"
-                            component={PlaylistIndexContainer}
-                          />
-                          <Route
-                            path="/"
-                            component={ChillifyMainContainer}
-                          />
+                        <div className="contentSpacing">
+                          <Switch>
+                            <Route
+                              path="/playlist/:playlistId"
+                              component={PlaylistIndexContainer}
+                            />
+                            <Route
+                              path="/"
+                              component={ChillifyMainContainer}
+                            />
 
-                        </Switch> 
+                          </Switch> 
+                        </div>
                       </div>
                     </div>
                 </div>

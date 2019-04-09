@@ -1,0 +1,90 @@
+
+.playlist-index-container{
+
+    .playlist-content{
+      padding-top: 2em;
+      min-height: 100vh;
+
+      .playlist-container{
+        display: flex;
+        flex-direction: row;
+        min-height: 100vh;
+
+    
+        .playlist-info{
+          display: block;
+          width: 25%;
+          max-width: 400px;
+          // background:#1db954;
+          margin: 0 auto 1.5em;
+          text-align: center;
+          padding: 0 8px;
+          .playlist-cover-image{
+            position: relative;
+            width: 100%;		/* desired width */
+            background-size: cover;
+            // filter: grayscale(100%) contrast(55%);
+
+
+          }
+          .playlist-cover-image:before{
+            content: "";
+            display: block;
+            padding-top: 100%; 	/* initial ratio of 1:1*/
+          }
+          
+          .playlist-name{
+            color: white;
+
+            font-size: 28px;
+            font-weight: 600;
+            margin: 12px 0 .3em;
+          }
+        }
+        
+        .tracklist-container{
+          width: 75%;
+          padding: 0 8px;
+          display: block;
+          // background: #1c2743;
+          .tracklist{
+            height: inherit;
+            width: 100%;
+            list-style: none;
+            margin-bottom: 1.5em;
+            height: 4.56em;
+            .tracklist-row{
+              height: 4.56em;
+              display: flex; 
+              flex-direction: row;
+              line-height: 20px;
+              transition-property: background-color;
+              transition-duration: .2s;
+              transition-timing-function: linear;
+              .tracklist-left{
+                padding-right: 1em;
+                
+              }
+              .tracklist-middle{
+                display: block;
+                // text-align: center;
+                .tracklist-name{
+                  font-size: 16px;
+                  color: white;
+
+                }
+                .tracklist-artist{
+                  font-size: 14px;
+                }
+
+              }
+              .tracklist-right{
+
+              }
+            }
+          }
+
+      }
+    }
+  }
+}

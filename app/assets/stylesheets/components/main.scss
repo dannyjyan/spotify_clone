@@ -69,23 +69,46 @@
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
+    flex-direction: row;
     min-height: 400px;
 }
 .playlist-index-item{
-    width: 16.6%;
-    height: 16vh;
-    padding: 0 8px;
-    background-size: cover;
-    float: left;
-    margin: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 16.6%;
+  height: 100%;
+  padding: 0 8px;
+
 }
-.playlist-index-item:hover{
+.playlist-index-photo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 8px;
+  background-size: cover;
+  float: left;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+.playlist-index-photo:hover{
     background-size: cover;
     opacity: 0.3;
     cursor: pointer;
+    transition: opacity 0.2s;
 }
-
-.playlist-index-item:before{
+.playlist-play-toggle:hover{
+  color: white;
+}
+.playlist-play-toggle{
+  position: relative;
+  text-align: center;
+  opacity: 0;
+  // width: 100%;
+  // height: 100%;
+}
+.playlist-index-photo:before{
     content: "";
     display:block;
     padding-top:100%;
@@ -95,10 +118,16 @@
     height: 300px;
     background-color: blue;
 }
-.cover-art-image{
-}
 .media-item{
+  margin: 12px 0 4px 0;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
 }
 #text{
     display:flex
+}
+.show{
+  opacity: 1.0;
 }

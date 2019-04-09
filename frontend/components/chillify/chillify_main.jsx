@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, Switch, Route} from 'react-router-dom';
 import {PlaylistIndexItem} from '../playlist/playlist_index_item';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class ChillifyMain extends React.Component{
 
   constructor(props){
@@ -13,6 +14,7 @@ class ChillifyMain extends React.Component{
     }
     // // this.fetchSong = this.fetchSong.bind(this)
     this.getProps = this.getProps.bind(this)
+    this.togglePlay = this.togglePlay.bind(this);
   }
   getCoverPhoto(songId){
     let {songs, albums} = this.state;
@@ -32,6 +34,10 @@ class ChillifyMain extends React.Component{
   }
   getProps(){
     return this.props
+  }
+  togglePlay(id){
+    let b = document.querySelector(".playlist-photo-"+ id).classList.add("show");
+    console.log(b);
   }
   componentWillMount(){
     console.log(this.props)
@@ -55,7 +61,7 @@ class ChillifyMain extends React.Component{
   render(){
     // console.log(this.props)
     return (
-          <section className="contentSpacing"> 
+          <> 
             <nav className="main-content-nav">
               <ul className="main-content-nav-list">
                 <li className="mc-nav-list-elements">
@@ -85,14 +91,20 @@ class ChillifyMain extends React.Component{
                     <h1 className="grid-header-text">Made for {this.props.currentUser.username}</h1>
                   </div>
                   <div className="grid-container-fluid">
-                    <div className="grid-container-playlist" >
+                    <div className="grid-container-playlist">
                       { this.state.playlists ? 
                         Object.values(this.state.playlists).map(plist => 
-                          <Link to={"/playlist/" + plist.id} className="playlist-index-item" key={"playlist-" + plist.id} style={{backgroundImage: "url(" + this.getCoverPhoto(plist.songIds[0]) + ")"}}>
+                          <div className="playlist-index-item" key={"playlist-" + plist.id}>
+                            <Link to={"/playlist/" + plist.id} className={"playlist-index-photo"} onMouseEnter={() => this.togglePlay(plist.id)} style={{backgroundImage: "url(" + this.getCoverPhoto(plist.songIds[0]) + ")"}}>
+                              <FontAwesomeIcon  className={"playlist-play-toggle "+ "playlist-photo-" + plist.id} icon="play" />
+
+                            </Link>
                             <div className="media-item">
-                                {plist.name}
+                              {plist.name}
                             </div> 
-                          </Link>) 
+                          </div>
+                          ) 
+                          
                         : ""
                         
                       }
@@ -102,7 +114,7 @@ class ChillifyMain extends React.Component{
                 </div>
               </section>
             </div>
-          </section>
+          </>
     )
   }
 }

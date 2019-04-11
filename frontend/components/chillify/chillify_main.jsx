@@ -47,12 +47,14 @@ class ChillifyMain extends React.Component{
     this.props.fetchPlaylists(this.props.currentUser.id).then(p => {
         this.props.fetchSongs().then(s => {
           this.props.fetchAlbums().then(a => {
-            this.setState({
-              playlists: p.playlists,
-              songs: s.songs,
-              albums: a.albums
-            })
-
+            this.props.fetchArtists().then(art => {
+              this.setState({
+                playlists: p.playlists,
+                songs: s.songs,
+                albums: a.albums,
+                artists: art.artists
+              })
+          })
           })
         })
       })

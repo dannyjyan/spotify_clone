@@ -9,14 +9,14 @@ export const receiveCurrentPlaylist = playlist => ({
     playlist 
 })
 
-export const receiveCurrentSong = songId => ({
-    type: RECEIVE_CURRENT_SONG,
-    playlists
-})
+// export const receiveCurrentSong = songId => ({
+//     type: RECEIVE_CURRENT_SONG,
+//     songId
+// })
 
-export const receivePlaylistSongs = playlist => ({
+export const receivePlaylistSongs = songs => ({
     type: RECEIVE_PLAYLIST_SONGS,
-    id
+    songs
 })
 
 export const receiveIsPlaying = isPlaying => ({

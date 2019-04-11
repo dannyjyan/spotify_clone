@@ -2,10 +2,11 @@ import { connect } from "react-redux";
 import NowPlaying from './now_playing';
 import { fetchSongs ,fetchAlbums} from '../../actions/song_actions';
 import { fetchPlaylists } from '../../actions/playlist_actions';
-
-const mapStateToProps = ({entities, session}) => {  
+import {receiveCurrentPlaylist, receivePlaylistSongs, receiveIsPlaying} from '../../actions/playback_actions'
+const mapStateToProps = ({entities, session, playback}) => {  
   return ({
     currentUser: entities.users[session.id],
+    playback,
     currentSong: {
       title: "We Were Young",
       artist: "Odesza",
@@ -15,8 +16,9 @@ const mapStateToProps = ({entities, session}) => {
       duration: 192,
       source: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/wwy.mp3"
     },
-    songs: entities.songs[1],
-    albums: Object.values(entities.albums),
+    songs: entities.songs,
+    artists: entities.artists,
+    albums: entities.albums,
   
   })
 }
@@ -24,7 +26,10 @@ const mapStateToProps = ({entities, session}) => {
 const mapDispatchToProps = (dispatch) => ({
   fetchPlaylists: () => dispatch(fetchPlaylists()),
   fetchSongs: () => dispatch(fetchSongs()),
-  fetchAlbums: () => dispatch(fetchAlbums())
+  fetchAlbums: () => dispatch(fetchAlbums()),
+  receiveCurrentPlaylist: (playlist) => dispatch(receiveCurrentPlaylist(playlist)),
+  receivePlaylistSongs: (songs) => dispatch(receivePlaylistSongs(songs)),
+  receiveIsPlaying: (isPlaying) => dispatch(receiveIsPlaying(isPlaying)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(NowPlaying)

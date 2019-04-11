@@ -5,7 +5,8 @@ import {combineReducers} from 'redux';
 const rootReducer = combineReducers({
     entities: entitiesReducer,
     errors: errorsReducer,
-    session: sessionReducer
+    session: sessionReducer,
+    playback: playbackReducer
 })
 
 export default rootReducer;

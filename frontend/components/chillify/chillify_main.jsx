@@ -14,7 +14,8 @@ class ChillifyMain extends React.Component{
     }
     // // this.fetchSong = this.fetchSong.bind(this)
     this.getProps = this.getProps.bind(this)
-    this.togglePlay = this.togglePlay.bind(this);
+    this.hoverPlayOn = this.hoverPlayOn.bind(this);
+    this.hoverPlayOff = this.hoverPlayOff.bind(this);
   }
   getCoverPhoto(songId){
     let {songs, albums} = this.state;
@@ -35,9 +36,11 @@ class ChillifyMain extends React.Component{
   getProps(){
     return this.props
   }
-  togglePlay(id){
-    let b = document.querySelector(".playlist-photo-"+ id).classList.add("show");
-    console.log(b);
+  hoverPlayOn(id){
+    document.querySelector(".playlist-photo-"+ id).classList.add("show");
+  }
+  hoverPlayOff(id){
+    document.querySelector(".playlist-photo-"+ id).classList.remove("show");
   }
   componentWillMount(){
     console.log(this.props)
@@ -95,8 +98,8 @@ class ChillifyMain extends React.Component{
                       { this.state.playlists ? 
                         Object.values(this.state.playlists).map(plist => 
                           <div className="playlist-index-item" key={"playlist-" + plist.id}>
-                            <Link to={"/playlist/" + plist.id} className={"playlist-index-photo"} onMouseEnter={() => this.togglePlay(plist.id)} style={{backgroundImage: "url(" + this.getCoverPhoto(plist.songIds[0]) + ")"}}>
-                              <FontAwesomeIcon  className={"playlist-play-toggle "+ "playlist-photo-" + plist.id} icon="play" />
+                            <Link to={"/playlist/" + plist.id} className={"playlist-index-photo"}  onMouseLeave={() => this.hoverPlayOff(plist.id)} onMouseEnter={() => this.hoverPlayOn(plist.id)} style={{backgroundImage: "url(" + this.getCoverPhoto(plist.songIds[0]) + ")"}}>
+                              <FontAwesomeIcon  className={"playlist-play-toggle "+ "playlist-photo-" + plist.id}  icon="play-circle" />
 
                             </Link>
                             <div className="media-item">
@@ -106,8 +109,10 @@ class ChillifyMain extends React.Component{
                           ) 
                           
                         : ""
-                        
+                    
                       }
+
+
 
                     </div>
                   </div>

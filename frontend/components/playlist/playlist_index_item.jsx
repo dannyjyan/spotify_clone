@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import SongIndexItem from './song_index_item';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { receiveCurrentPlaylist } from '../../actions/playback_actions';
 
 
 class PlaylistIndexItem extends React.Component{
@@ -11,13 +12,14 @@ class PlaylistIndexItem extends React.Component{
     currentSongId: 0
   }
   this.getSongs = this.getSongs.bind(this);
-  }
+  this.changePlaylist = this.changePlaylist.bind(this)
+;  }
 
   componentWillMount(){
-  this.props.fetchSongs()
-  this.props.fetchArtists()
-  this.props.fetchAlbums()
-  this.props.fetchPlaylists(this.props.currentUser.id)
+    this.props.fetchSongs()
+    this.props.fetchArtists()
+    this.props.fetchAlbums()
+    this.props.fetchPlaylists(this.props.currentUser.id)
   // this.props.fetchArtists()
   // this.props.fetchAlbums()
   // this.props.fetchPlaylists(this.props.currentUser.id).then(() => this.render())
@@ -25,6 +27,10 @@ class PlaylistIndexItem extends React.Component{
       // this.setState({
       //   playlist
   // });
+  }
+  changePlaylist(){
+    this.props.receiveCurrentPlaylist(this.props.playlist.id)
+    this.props.receivePlaylistSongs(this.props.playlist.songIds)
   }
   getCoverPhoto(songId){
   let {songs, albums} = this.props;
@@ -56,7 +62,6 @@ class PlaylistIndexItem extends React.Component{
   let currPlaylist = this.props.playlist;
   let {artists, songs, albums} = this.props
   if (!currPlaylist || !songs || !artists || !albums || Object.entries(artists).length === 0 || Object.entries(albums).length === 0 || Object.entries(songs).length === 0 || Object.entries(currPlaylist).length === 0) {
-    console.log(currPlaylist,artists, songs, albums)
     return (
     <div className="playlist-loading"> LOADING </div>
     )
@@ -70,7 +75,7 @@ class PlaylistIndexItem extends React.Component{
         {albums !== undefined && Object.entries(albums).length !== 0 ? 
 
           <div className="playlist-image-container" >
-            <div className={"playlist-index-photo"}  style={{backgroundImage: "url(" + this.getCoverPhoto(currPlaylist.songIds[0]) + ")"}}>
+            <div className={"playlist-index-photo"}  style={{backgroundImage: "url(" + this.getCoverPhoto(currPlaylist.songIds[0]) + ")"}} onClick={this.changePlaylist}>
               <FontAwesomeIcon  className={"playlist-play-toggle "+ "playlist-photo-" + currPlaylist.id}  icon="play-circle" />
 
             </div>

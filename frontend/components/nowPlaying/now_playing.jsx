@@ -5,18 +5,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class NowPlaying extends React.Component{
   constructor(props){
-  super(props)
-  // console.log(props)        
-  this.state = {
-    currSongIdx: 0,
-    playing: false,
-    currentSeconds: 0,
-    percentage: 0,
-    volume: 0.5,
-    muted: false,
-    volumeHover: false,
-    progressHover: false
-  }
+    super(props)
+    this.state = {
+      currSongIdx: 0,
+      playing: false,
+      currentSeconds: 0,
+      percentage: 0,
+      volume: 0.5,
+      muted: false,
+      volumeHover: false,
+      progressHover: false
+    }
   // currentSong: {
   //   title: "We Were Young",
   //   artist: "Odesza", 
@@ -27,46 +26,57 @@ class NowPlaying extends React.Component{
   //   source: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/wwy.mp3"
   // }
   
-  // this.props.fetchSongs();
-  this.defaultColor = '#b3b3b3';
-  this.isEmpty = this.isEmpty.bind(this);
-  this.getImageUrl = this.getImageUrl.bind(this);
-  this.hoverColor = '#1db954';
-  this.onClickProgress = this.onClickProgress.bind(this);
-  this.onClickVolume = this.onClickVolume.bind(this);
-  this.setDuration = this.setDuration.bind(this);
-  this.onProgress = this.onProgress.bind(this);
-  this.ref = this.ref.bind(this);
-  this.toggleVolumeHover = this.toggleVolumeHover.bind(this);
-  this.toggleProgressHover = this.toggleProgressHover.bind(this);
-  this.toggleMute = this.toggleMute.bind(this);
-  this.togglePlay = this.togglePlay.bind(this);
-  this.updateTime = this.updateTime.bind(this);
-  this.onNextSong = this.onNextSong.bind(this);
-  this.onPrevSong = this.onPrevSong.bind(this);
+    this.defaultColor = '#b3b3b3';
+    this.isEmpty = this.isEmpty.bind(this);
+    this.getImageUrl = this.getImageUrl.bind(this);
+    this.hoverColor = '#1db954';
+    this.onClickProgress = this.onClickProgress.bind(this);
+    this.onClickVolume = this.onClickVolume.bind(this);
+    this.setDuration = this.setDuration.bind(this);
+    this.onProgress = this.onProgress.bind(this);
+    this.ref = this.ref.bind(this);
+    this.toggleVolumeHover = this.toggleVolumeHover.bind(this);
+    this.toggleProgressHover = this.toggleProgressHover.bind(this);
+    this.toggleMute = this.toggleMute.bind(this);
+    this.togglePlay = this.togglePlay.bind(this);
+    this.updateTime = this.updateTime.bind(this);
+    this.onNextSong = this.onNextSong.bind(this);
+    this.onPrevSong = this.onPrevSong.bind(this);
   }
   
-  componentDidMount(){
-  // this.props.fetchSongs();
+  componentDidUpdate(newProps){
+
+    if (newProps.playback.currSongIdx !== this.props.playback.currSongIdx){
+      // console.log(newProps.playback, this.props.playback)
+      // this.render();
+    }
+    // let currSongIdx = this.state.currSongIdx;
+    // let newSongIdx = newProps.playback.songIdx
+    // if(newSongIdx && currSongIdx !== newSongIdx){
+    //   if(newSongIdx >= newProps.playback.playbackSong.length){
+    //     newSongIdx = 0;
+    //   }
+    // } 
+    // this.setState({currSongIdx: newSongIdx});
   }
+
   isEmpty(obj){
-  if (!obj) return true;
-  return Object.keys(obj).length === 0
+    if (!obj) return true;
+    return Object.keys(obj).length === 0
   }
   onNextSong(){
-  this.player.seekTo(0);
-  if (this.state.currSongIdx < this.props.playback.playbackSongs.length - 1){
-    this.setState({
-      currSongIdx: this.state.currSongIdx + 1,
-      currentSeconds: 0,
-      percentage: 0,
-      playing: true 
-    })
+    // this.player.seekTo(0);
+    // if (this.state.currSongIdx < this.props.playback.playbackSongs.length - 1){
+    if (this.props.playback.currSongIdx < this.props.playback.playbackSongs.length - 1){
+      this.props.receiveCurrentSong(this.props.playback.currSongIdx + 1)
+      this.setState({
+        // currSongIdx: this.state.currSongIdx + 1,
+        playing: true 
+      })
   } else {
+    this.props.receiveCurrentSong(0)
     this.setState({
-      currSongIdx: 0,
-      currentSeconds: 0,
-      percentage: 0,
+      // currSongIdx: 0,
       playing: true 
 
     })
@@ -74,11 +84,13 @@ class NowPlaying extends React.Component{
   }
   onPrevSong(){
     this.player.seekTo(0);
-    if (this.state.currSongIdx !== 0){
+    // if (this.state.currSongIdx !== 0){
+    if (this.props.playback.currSongIdx !== 0) {
+      this.props.receiveCurrentSong(this.props.playback.currSongIdx - 1)
       this.setState({
-        currSongIdx: this.state.currSongIdx - 1,
+        // currSongIdx: this.state.currSongIdx - 1,
         playing: true 
-      })
+      });
     } else {
       this.setState({ 
         playing: true 
@@ -94,19 +106,19 @@ class NowPlaying extends React.Component{
       percentage: newPercentage,
       currentSecond: Math.floor(newPercentage * this.state.duration)
     // currentSeconds: Math.floor(newPercentage * this.props.currentSong.duration)
-  })
+    })
   }
   onClickVolume(e){
     // TEST STUFF
-    
+    // this.props.receiveCurrentPlaylist(this.props.playlists[2]);
     let bar = document.getElementById("volumeBar");
     let rect = bar.getBoundingClientRect();
     let volume = (e.clientX - rect.left) / (rect.right - rect.left);
-    this.setState({
-      volume: volume,
-    })
+    // this.setState({
+    //   volume: volume,
+    // })
   // console.log(this.state)
-  // console.log(this.props)
+    // console.log(this.props)
   }
 
   onProgress(progress){
@@ -134,15 +146,16 @@ class NowPlaying extends React.Component{
   }
 
   toggleMute(){
+    // console.log(this.props)
     this.setState({
       muted: !this.state.muted
     })
   }
 
   togglePlay(){
-  this.setState({
-    playing: !this.state.playing
-  })
+    this.setState({
+      playing: !this.state.playing
+    })
   }
 
   updateTime(timeStamp){
@@ -158,8 +171,9 @@ class NowPlaying extends React.Component{
     return albums[albumId].imageUrl
   }
 
-  render(){
 
+  render(){
+    
     let volume = this.state.volume;
     if (this.state.muted) volume = 0;
       let progressColor = {backgroundColor: this.defaultColor};
@@ -171,16 +185,17 @@ class NowPlaying extends React.Component{
       volumeColor = {backgroundColor: this.hoverColor};
     } 
     let currentSong;
-    if (!this.isEmpty(this.props.songs)){
-      currentSong = this.props.songs[this.props.playback.playbackSongs[this.state.currSongIdx]];
+    if (!this.isEmpty(this.props.songs) && !this.isEmpty(this.props.playback.playbackSongs) ){
+      // currentSong = this.props.songs[this.props.playback.playbackSongs[this.state.currSongIdx]];
+      currentSong = this.props.songs[this.props.playback.playbackSongs[this.props.playback.currSongIdx]];
     }
-  // console.log(this.props, currentSong)
-
-
+  
   // if (!currentSong) {
   //   return <div></div>
   // }
-  // debugger;
+  // if (this.state.muted === true) {
+  //   debugger;
+  // }
   return (
 
   <footer className="now-playing-bar-container">

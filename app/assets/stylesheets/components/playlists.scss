@@ -48,7 +48,7 @@
     
     .tracklist-container{
       width: 75%;
-      padding: 16px 8px 0;
+      padding: 0 8px 0;
       display: block;
       // background: #1c2743;
       .tracklist{
@@ -56,15 +56,16 @@
       width: 100%;
       list-style: none;
       margin-bottom: 1.5em;
-      height: 4.56em;
+      // height: 4.56em;
       .tracklist-row{
         height: 4.56em;
         display: flex; 
+        align-items: center;
         flex-direction: row;
         line-height: 20px;
-        transition-property: background-color;
-        transition-duration: .2s;
-        transition-timing-function: linear;
+        // transition-property: background-color;
+        // transition-duration: .2s;
+        // transition-timing-function: linear;
         .tracklist-left{
         padding-right: 1em;
         

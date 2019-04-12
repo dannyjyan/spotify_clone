@@ -71,12 +71,16 @@ class NowPlaying extends React.Component{
       this.props.receiveCurrentSong(this.props.playback.currSongIdx + 1)
       this.setState({
         // currSongIdx: this.state.currSongIdx + 1,
+        currentSeconds: 0,
+        percentage: 0,
         playing: true 
       })
   } else {
     this.props.receiveCurrentSong(0)
     this.setState({
       // currSongIdx: 0,
+      currentSeconds: 0,
+      percentage: 0,
       playing: true 
 
     })
@@ -89,10 +93,14 @@ class NowPlaying extends React.Component{
       this.props.receiveCurrentSong(this.props.playback.currSongIdx - 1)
       this.setState({
         // currSongIdx: this.state.currSongIdx - 1,
+        currentSeconds: 0,
+        percentage: 0,
         playing: true 
       });
     } else {
       this.setState({ 
+        currentSeconds: 0,
+        percentage: 0,
         playing: true 
       })
     }
@@ -104,7 +112,7 @@ class NowPlaying extends React.Component{
     this.player.seekTo(newPercentage)
     this.setState({
       percentage: newPercentage,
-      currentSecond: Math.floor(newPercentage * this.state.duration)
+      currentSeconds: Math.floor(newPercentage * this.state.duration)
     // currentSeconds: Math.floor(newPercentage * this.props.currentSong.duration)
     })
   }

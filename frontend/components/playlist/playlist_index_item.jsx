@@ -31,6 +31,7 @@ class PlaylistIndexItem extends React.Component{
   changePlaylist(){
     this.props.receiveCurrentPlaylist(this.props.playlist.id)
     this.props.receivePlaylistSongs(this.props.playlist.songIds)
+    this.props.receiveCurrentSong(0);
   }
   getCoverPhoto(songId){
   let {songs, albums} = this.props;

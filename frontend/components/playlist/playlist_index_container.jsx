@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import PlaylistIndexItem from './playlist_index_item';
 import { fetchPlaylists } from '../../actions/playlist_actions';
 import {fetchSongs, fetchAlbums, fetchArtists} from '../../actions/song_actions';
-import {receiveCurrentPlaylist, receivePlaylistSongs, receiveIsPlaying} from '../../actions/playback_actions'
+import {receiveCurrentSong, receiveCurrentPlaylist, receivePlaylistSongs, receiveIsPlaying} from '../../actions/playback_actions'
 
 
 const mapStateToProps = ({entities, session}, ownProps) => {  
@@ -27,7 +27,8 @@ const mapDispatchToProps = (dispatch) => ({
   receiveCurrentPlaylist: (playlist) => dispatch(receiveCurrentPlaylist(playlist)),
   receivePlaylistSongs: (songs) => dispatch(receivePlaylistSongs(songs)),
   receiveIsPlaying: (isPlaying) => dispatch(receiveIsPlaying(isPlaying)),
-  
+  receiveCurrentSong: (songId) => dispatch(receiveCurrentSong(songId)),
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlaylistIndexItem)

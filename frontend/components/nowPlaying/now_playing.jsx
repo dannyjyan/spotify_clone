@@ -45,18 +45,17 @@ class NowPlaying extends React.Component{
   }
   
   componentDidUpdate(newProps){
-
     if (newProps.playback.currSongIdx !== this.props.playback.currSongIdx){
-      // console.log(newProps.playback, this.props.playback)
-      // this.render();
+      console.log(newProps.playback, this.props.playback)
+      this.render();
     }
-    // let currSongIdx = this.state.currSongIdx;
-    // let newSongIdx = newProps.playback.songIdx
-    // if(newSongIdx && currSongIdx !== newSongIdx){
-    //   if(newSongIdx >= newProps.playback.playbackSong.length){
-    //     newSongIdx = 0;
-    //   }
-    // } 
+    let currSongIdx = this.state.currSongIdx;
+    let newSongIdx = newProps.playback.songIdx
+    if(newSongIdx && currSongIdx !== newSongIdx){
+      if(newSongIdx >= newProps.playback.playbackSong.length){
+        newSongIdx = 0;
+      }
+    } 
     // this.setState({currSongIdx: newSongIdx});
   }
 

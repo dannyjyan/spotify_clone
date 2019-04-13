@@ -42,8 +42,13 @@ class ChillifyMain extends React.Component{
   hoverPlayOff(id){
     document.querySelector(".playlist-photo-"+ id).classList.remove("show");
   }
+  componentDidMount(){
+    document.getElementsByClassName('top-container')[0].setAttribute('style', 'background-image: linear-gradient(to right bottom, rgb(103, 58, 50), rgb(0, 0, 0)), linear-gradient(transparent, rgb(0, 0, 0) 70%);')
+
+  }
   componentWillMount(){
-    console.log(this.props)
+    // console.log(this.props)
+
     this.props.fetchPlaylists(this.props.currentUser.id).then(p => {
         this.props.fetchSongs().then(s => {
           this.props.fetchAlbums().then(a => {

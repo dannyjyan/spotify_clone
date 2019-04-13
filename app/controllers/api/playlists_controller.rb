@@ -1,6 +1,7 @@
 class Api::PlaylistsController < ApplicationController
     before_action :require_logged_in
     def index
+      @users = User.all
       if params[:userId]
         user = User.find(params[:userId]);
         @playlists = user.playlists;

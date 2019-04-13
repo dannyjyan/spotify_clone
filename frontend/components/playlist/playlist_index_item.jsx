@@ -28,6 +28,9 @@ class PlaylistIndexItem extends React.Component{
       //   playlist
   // });
   }
+  componentDidMount(){
+    document.getElementsByClassName('top-container')[0].setAttribute('style', 'background-image: linear-gradient(to right bottom, rgb(55, 67, 98), rgb(0, 0, 0)), linear-gradient(transparent, rgb(0, 0, 0) 70%)')
+  }
   changePlaylist(){
     this.props.receiveCurrentPlaylist(this.props.playlist.id)
     this.props.receivePlaylistSongs(this.props.playlist.songIds)
@@ -67,7 +70,7 @@ class PlaylistIndexItem extends React.Component{
     <div className="playlist-loading"> LOADING </div>
     )
   }
-  console.log(this.props)
+  // console.log(this.props)
   return (
     <div className="playlist-index-container">
     <div className="playlist-content">
@@ -87,7 +90,15 @@ class PlaylistIndexItem extends React.Component{
         // </div>  : ""
         }
         <div className="playlist-name">
-        {currPlaylist.name}
+          {currPlaylist.name}
+        </div> 
+        <div className="playlist-author">
+          {currPlaylist.username}
+        </div>
+        <div className="playlist-play-button" onClick={this.changePlaylist}>
+          <div className="btn-green btn">
+            PLAY
+          </div>
         </div> 
         <div className="playlist-description"> 
         Your favorite music, plus new discoveries you’ll love. Always fresh. Featuring Lost Kings, BAYNK, Gryffin and more
@@ -102,9 +113,9 @@ class PlaylistIndexItem extends React.Component{
           let song = this.props.songs[id]; 
           if (song && Object.entries(song).length !== 0){
           return (
-          <li key={"song"+id} className="tracklist-row">
+          <li key={"song"+id} className="tracklist-row" id={"tracklist-song-"+id} >
             <div className="tracklist-left">
-            <FontAwesomeIcon className="icon" icon="music" />    
+              <FontAwesomeIcon className="icon" icon="music" />    
             </div>
             <div className="tracklist-middle"> 
             <div className="tracklist-name">{song.name} </div>

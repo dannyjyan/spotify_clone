@@ -18,7 +18,6 @@ class Splash extends React.Component{
         })
     }
     componentDidMount(){
-        // this.fetchSong(1);
     }
 
     render(){

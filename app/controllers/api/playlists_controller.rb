@@ -6,8 +6,6 @@ class Api::PlaylistsController < ApplicationController
         user = User.find(params[:userId]);
         @playlists = user.playlists;
         # Playlist.where(user_id: params[:userId])
-
-        
       else 
         @playlists = Playlist.all
       end 

@@ -121,9 +121,9 @@ class NowPlaying extends React.Component{
     let bar = document.getElementById("volumeBar");
     let rect = bar.getBoundingClientRect();
     let volume = (e.clientX - rect.left) / (rect.right - rect.left);
-    // this.setState({
-    //   volume: volume,
-    // })
+    this.setState({
+      volume: volume,
+    })
   // console.log(this.state)
     // console.log(this.props)
   }

@@ -8,12 +8,11 @@
     z-index: 4;
     background-color: rgba(0,0,0,.8);
     overflow: auto;
-    min-height: 0!important;
+    min-height: 0 !important;
     will-change: transform;
     padding-bottom: 90px;
 }
 .welcome-message{
-    color: white;
     font-weight: 700;
     font-size: 20px;
 }
@@ -23,11 +22,49 @@
     min-height: 0 !important;
 }
 .nav-bar{
-    padding-top: 24px;
-    padding-bottom: 5px;
-    display: flex;
-    flex-direction: column;
-    user-select: none;
-    width: 230px;
-    cursor: default;
+  padding-top: 24px;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  width: 230px;
+  height: calc(100vh - 115px);
+  cursor: default;
+  .navBar-item{
+    height: 40px;
+  }
+  .nav-bar-header{
+    padding: 0px 18px 24px;
+  }
+  .nav-bar-link-wrapper{
+    color: #b3b3b3;
+    padding: 0px 24px;
+  }
+  .nav-bar-link-wrapper:hover{
+    color: white; 
+    transition: 0.3s;
+  }
+  .navbar-link-text{
+    margin-left: 16px;
+  }
+
+  .chillify-home-link, .chillify-login-text:hover{
+    color: white;
+
+    .chillify-login-text{
+      color: white;
+      font-size: 20px;
+    }
+  }
+  .nav-recent-playlists{
+    flex: 1;
+    -webkit-box-flex: 1;
+    padding-left: 24px;
+  }
+  .current-user-container{
+    padding-left: 24px;
+  }
+}
+.spotify-navbar {
+  font-size: 24px;
 }

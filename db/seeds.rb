@@ -10,6 +10,7 @@
 #Users
 corgi = User.create(username: "Corgi", email: "corgi@corgi.com", password: "password" , confirmEmail: "corgi@corgi.com")
 danny = User.create(username: "Danny", email: "danny@danny.com", password: "dannyjyan", confirmEmail: "danny@danny.com")
+spotify = User.create(username: "Spotify", email: "spotify@spotify.com", password: "spotifymaster", confirmEmail: "spotify@spotify.com")
 
 #Playlists
 doggy_tunes = Playlist.create(name: "Doggy Tunes", user_id: corgi.id)
@@ -18,6 +19,8 @@ who_let_pl = Playlist.create(name: "Who Let the Dogs Out", user_id: corgi.id)
 young_wild_pl = Playlist.create(name: "Young and Wild and Free", user_id: corgi.id)
 drop_it = Playlist.create(name: "R&G (Rhythm and Gangsta): The Masterpiece", user_id: corgi.id)
 lungs_pl = Playlist.create(name: "Lungs", user_id: danny.id)
+awake = Playlist.create(name: "Awake", user_id: corgi.id)
+chill_tracks = Playlist.create(name: "Chill Tracks", user_id: spotify.id)
 
 #Artists
 florence = Artist.create(name: "Florence + the Machine")
@@ -25,6 +28,11 @@ ariana = Artist.create(name: "Ariana Grande")
 baha = Artist.create(name: "Baha Men")
 maggie = Artist.create(name: "Maggie")
 snoop = Artist.create(name: "Snoop Dogg")
+illenium = Artist.create(name: "Illenium")
+kasbo = Artist.create(name: "Kasbo")
+san_holo = Artist.create(name: "San Holo")
+said_the_sky = Artist.create(name: "Said the Sky")
+
 
 #Albums
 lungs = Album.create(name: "Lungs", artist_id: florence.id)
@@ -33,6 +41,11 @@ thank_alb = Album.create(name: "thank u, next", artist_id: ariana.id)
 now_that = Album.create(name: "Now That The Light Is Fading", artist_id: maggie.id)
 young_alb = Album.create(name: "Young and Wild and Free", artist_id: snoop.id)
 r_g = Album.create(name: "R&G (Rhythm and Gangsta): The Masterpiece", artist_id: snoop.id)
+awake = Album.create(name: "Awake", artist_id: illenium.id)
+we_rise_alb = Album.create(name: "We Rise", artist_id: san_holo.id)
+light_alb = Album.create(name: "Light", artist_id: san_holo.id)
+places_we_dont = Album.create(name: "Places We Don't Know", artist_id: kasbo.id)
+wide_eyed = Album.create(name: "Wide Eyed", artist_id: said_the_sky.id)
 
 #Songs 
 dog_days = Song.create(name: "Dog Days Are Over", year: 2009, artist_id: florence.id, album_id: lungs.id)
@@ -43,9 +56,27 @@ drop_it = Song.create(name: "Drop It Like It's Hot", year: 2004, artist_id: snoo
 seven = Song.create(name: "7 rings", year: 2019, artist_id: ariana.id, album_id: thank_alb.id)
 thank_u = Song.create(name: "thank u, next", year: 2019, artist_id: ariana.id, album_id: thank_alb.id)
 bad_idea = Song.create(name: "bad idea", year: 2019, artist_id: ariana.id, album_id: thank_alb.id)
+needed_you = Song.create(name: "Needed You", year: 2017, artist_id: illenium.id, album_id: awake.id)
+crawl_outta_love = Song.create(name: "Crawl Outta Love", year: 2017, artist_id: illenium.id, album_id: awake.id)
+no_time_like_now = Song.create(name: "No Time Like Now", year: 2017, artist_id: illenium.id, album_id: awake.id)
+free_fall = Song.create(name: "Free Fall", year: 2017, artist_id: illenium.id, album_id: awake.id)
+whered_u_go = Song.create(name: "Where'd u go", year: 2017, artist_id: illenium.id, album_id: awake.id)
+fractures = Song.create(name: "Fractures", year: 2017, artist_id: illenium.id, album_id: awake.id)
+leaving = Song.create(name: "Leaving", year: 2017, artist_id: illenium.id, album_id: awake.id)
+lost = Song.create(name: "Lost", year: 2017, artist_id: illenium.id, album_id: awake.id)
+sound_of_walking = Song.create(name: "Sound of Walking Away", year: 2017, artist_id: illenium.id, album_id: awake.id)
+taking_me_higher = Song.create(name: "Taking Me Higher", year: 2017, artist_id: illenium.id, album_id: awake.id)
+feel_good = Song.create(name: "Feel Good", year: 2017, artist_id: illenium.id, album_id: awake.id)
+beautiful_creatures = Song.create(name: "Beautiful Creatures (feat. MAX)", year: 2017, artist_id: illenium.id, album_id: awake.id)
+let_you_go = Song.create(name: "Let You Go", year: 2017, artist_id: illenium.id, album_id: awake.id)
+all_i_got = Song.create(name: "All I Got", year: 2017, artist_id: said_the_sky.id, album_id: wide_eyed.id)
+light = Song.create(name: "Light", year: 2017, artist_id: san_holo.id, album_id: light_alb.id);
+about_you = Song.create(name: "About You", year: 2018, artist_id: kasbo.id, album_id: places_we_dont.id)
+we_rise = Song.create(name: "We Rise", year: 2015, artist_id: san_holo.id, album_id: we_rise_alb.id);
+
 
 #Playlist_Songs
-PlaylistSong.create(song_id: florence.id, playlist_id: doggy_tunes.id)  
+PlaylistSong.create(song_id: dog_days.id, playlist_id: doggy_tunes.id)  
 PlaylistSong.create(song_id: who_let.id, playlist_id: doggy_tunes.id) 
 PlaylistSong.create(song_id: dog_years.id, playlist_id: doggy_tunes.id) 
 PlaylistSong.create(song_id: young.id, playlist_id: doggy_tunes.id) 
@@ -55,6 +86,26 @@ PlaylistSong.create(song_id: who_let.id, playlist_id: who_let_pl.id)
 PlaylistSong.create(song_id: young.id, playlist_id: young_wild_pl.id)
 PlaylistSong.create(song_id: drop_it.id, playlist_id: drop_it.id)
 PlaylistSong.create(song_id: dog_years.id, playlist_id: lungs_pl.id)
+## Illenium
+PlaylistSong.create(song_id: needed_you.id, playlist_id: awake.id)
+PlaylistSong.create(song_id: crawl_outta_love.id, playlist_id: awake.id)
+PlaylistSong.create(song_id: no_time_like_now.id, playlist_id: awake.id)
+PlaylistSong.create(song_id: free_fall.id, playlist_id: awake.id)
+PlaylistSong.create(song_id: whered_u_go.id, playlist_id: awake.id)
+PlaylistSong.create(song_id: fractures.id, playlist_id: awake.id)
+PlaylistSong.create(song_id: leaving.id, playlist_id: awake.id)
+PlaylistSong.create(song_id: lost.id, playlist_id: awake.id)
+PlaylistSong.create(song_id: sound_of_walking.id, playlist_id: awake.id)
+PlaylistSong.create(song_id: taking_me_higher.id, playlist_id: awake.id)
+PlaylistSong.create(song_id: feel_good.id, playlist_id: awake.id)
+PlaylistSong.create(song_id: beautiful_creatures.id, playlist_id: awake.id)
+PlaylistSong.create(song_id: let_you_go.id, playlist_id: awake.id)
+# 
+PlaylistSong.create(song_id: all_i_got.id, playlist_id: chill_tracks.id);
+PlaylistSong.create(song_id: about_you.id, playlist_id: chill_tracks.id);
+PlaylistSong.create(song_id: we_rise.id, playlist_id: chill_tracks.id);
+PlaylistSong.create(song_id: light.id, playlist_id: chill_tracks.id);
+
 
 
 #Add audio to songs
@@ -66,6 +117,31 @@ drop_it.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/
 seven.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Ariana Grande - 7 rings.mp3"), filename: "Ariana Grande - 7 rings.mp3")
 thank_u.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Ariana Grande - thank u, next.mp3"), filename: "Ariana Grande - thank u, next.mp3")
 bad_idea.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Ariana Grande - bad idea.mp3"), filename: "Ariana Grande - bad idea.mp3")
+## illenium
+needed_you.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Illenium-needed-you.mp3"), filename: "Illenium-needed-you.mp3") 
+crawl_outta_love.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Illenium-Crawl-Outta-Love.mp3"), filename: "Illenium-Crawl-Outta-Love.mp3")
+no_time_like_now.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Illenium-No-Time-Like-Now.mp3"),filename: "Illenium-No-Time-Like-Now.mp3") 
+free_fall.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Illenium-Free-Fall.mp3"),filename: "Illenium-Free-Fall.mp3") 
+whered_u_go.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Illenium-Where'd-U-Go.mp3"),filename: "Illenium-Where'd-U-Go.mp3")
+fractures.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Illenium-Fractures.mp3"),filename: "Illenium-Fractures.mp3") 
+leaving.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Illenium-Leaving.mp3"),filename: "Illenium-Leaving.mp3") 
+lost.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Illenium-Lost.mp3"),filename: "Illenium-Lost.mp3") 
+sound_of_walking.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/illenium-sound-of-walking-away.mp3"),filename: "Illenium-sound-of-walking-away.mp3")
+taking_me_higher.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Illenium-Taking-Me-Higher.mp3"),filename: "Illenium-Taking-Me-Higher.mp3") 
+feel_good.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Illenium-Feel-Good.mp3"),filename: "Illenium-Feel-Good.mp3")
+beautiful_creatures.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Illenium-Beautiful-Creatures.mp3"),filename: "Illenium-Beautiful-Creatures.mp3")
+let_you_go.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Illenium-Let-You-Go.mp3"),filename: "Illenium-Let-You-Go.mp3") 
+all_i_got.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/SaidTheSky-All-I-Got.mp3"),filename: "SaidTheSky-All-I-Got.mp3")
+light.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/SanHolo-Light.mp3"),filename: "SanHolo-Light.mp3")
+about_you.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/Kasbo-About-You.mp3"),filename: "Kasbo-About-You.mp3")
+we_rise.audio.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/audio/SanHolo-We-Rise.mp3"),filename: "SanHolo-We-Rise.mp3")
+
+
+
+
+
+
+
 
 #Add images to Albums
 lungs.cover_image.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/img/lungs.jpeg"), filename: "lungs.jpeg")
@@ -74,3 +150,14 @@ thank_alb.cover_image.attach(io: File.open("/Users/Danny/Documents/app_academy/P
 now_that.cover_image.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/img/dog-years.jpeg"), filename: "dog-years.jpeg")
 young_alb.cover_image.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/img/young-wild-free.jpeg"), filename: "young-wild-free.jpeg")
 r_g.cover_image.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/img/drop-it-like-its-hot.jpeg"), filename: "drop-it-like-its-hot.jpeg")
+awake.cover_image.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/img/awake.jpeg"),filename: "awake.jpeg")
+we_rise_alb.cover_image.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/img/we-rise.jpeg"),filename: "we-rise.jpeg")
+light_alb.cover_image.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/img/light.jpeg"),filename: "light.jpeg")
+places_we_dont.cover_image.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/img/places-we-dont-know.jpeg"),filename: "places-we-dont-know.jpeg")
+wide_eyed.cover_image.attach(io: File.open("/Users/Danny/Documents/app_academy/Projects/full_stack/img/wide-eyed.jpeg"),filename: "wide-eyed.jpeg")
+
+
+
+
+
+

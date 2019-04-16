@@ -42,7 +42,6 @@ class PlaylistIndexItem extends React.Component{
     let albumId = songs[songId].album_id;
     return albums[albumId].imageUrl
   }
-  //
   return ""
   }
   componentWillReceiveProps(newProps){

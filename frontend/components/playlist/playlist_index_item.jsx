@@ -40,7 +40,7 @@ class PlaylistIndexItem extends React.Component{
   let {songs, albums} = this.props;
   if (songs !== undefined && Object.entries(songs).length !== 0 && albums !== undefined && Object.entries(albums).length !== 0){
     let albumId = songs[songId].album_id;
-    return albums[albumId].imageUrl
+    return albums[albumId].image_url
   }
   return ""
   }

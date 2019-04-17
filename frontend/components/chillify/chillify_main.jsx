@@ -17,12 +17,13 @@ class ChillifyMain extends React.Component{
     this.hoverPlayOn = this.hoverPlayOn.bind(this);
     this.hoverPlayOff = this.hoverPlayOff.bind(this);
   }
+  
   getCoverPhoto(songId){
     let {songs, albums} = this.state;
 
     if (songs !== undefined && albums !== undefined){
       let albumId = songs[songId].album_id;
-      return albums[albumId].imageUrl
+      return albums[albumId].image_url
     }
     return ""
   }

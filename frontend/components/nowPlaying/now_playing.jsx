@@ -175,7 +175,7 @@ class NowPlaying extends React.Component{
     // console.log(songs, albums)
     if (this.isEmpty(songs) || this.isEmpty(albums)) return ""
     let albumId = songs[songId].album_id;
-    return albums[albumId].imageUrl
+    return albums[albumId].image_url
   }
 
 
@@ -261,7 +261,7 @@ class NowPlaying extends React.Component{
       <ReactPlayer 
         ref={this.ref}
         // url={this.props.songs.audioUrl}
-        url={currentSong.audioUrl}
+        url={currentSong.audio_url}
         playing={this.state.playing}
         onProgress={this.onProgress}
         onReady={this.setDuration}

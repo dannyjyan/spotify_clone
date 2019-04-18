@@ -81,10 +81,10 @@ class PlaylistsComponent extends React.Component{
                   <Link to="/" className="mc-nav-list-links nav-link-selected">PLAYLISTS</Link>
                 </li>
                 <li className="mc-nav-list-elements">
-                  <Link to="/" className="mc-nav-list-links">SONGS (TBD) </Link>
+                  <Link to="/" className="mc-nav-list-links not-implemented">SONGS (TBD) </Link>
                 </li>
                 <li className="mc-nav-list-elements">
-                  <Link to="/" className="mc-nav-list-links">ARTISTS (TBD)</Link>
+                  <Link to="/" className="mc-nav-list-links not-implemented">ARTISTS (TBD)</Link>
                 </li>
                 {/* <li className="mc-nav-list-elements">
                   <Link to="/" className="mc-nav-list-links">GENRES</Link>

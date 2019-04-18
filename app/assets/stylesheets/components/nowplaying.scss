@@ -23,13 +23,16 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 114px;
+    height: 90px;
     padding: 0 16px;
 }
 .now-playing-artwork{
     width: 56px;
     height: 56px;
     background-size: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+
 }
 .now-playing-bar-left{
     display: flex;
@@ -108,6 +111,11 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
+    margin: 0 14px;
+    .now-playing-artist{
+      color: #b3b3b3;
+      font-size: 12px;
+    }
 }
 .play-button{
     display: flex;
@@ -122,6 +130,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    font-size: 12px;
+    .progress-end-time{
+      padding-left: 12px;
+    }
+    .progress-current-time{
+      padding-right: 12px;
+    }
+
     
 }
 .progress-bar{

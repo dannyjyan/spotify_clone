@@ -3,8 +3,7 @@ import {Link} from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const NavBar = () => {
-
+export const NavBar = (props) => {
   return (
     <div className="nav-bar-container">
     <nav className="nav-bar">
@@ -33,7 +32,7 @@ export const NavBar = () => {
                 <div className="nav-bar-link-wrapper">
                   <div className="nav-search-icon">
                     <FontAwesomeIcon icon="search"/>
-                    <span className="navbar-link-text">Search</span>
+                    <span className="navbar-link-text not-implemented">Search</span>
                   </div>
                 </div>
               </Link>

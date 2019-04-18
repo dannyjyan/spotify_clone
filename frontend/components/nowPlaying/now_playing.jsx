@@ -42,6 +42,7 @@ class NowPlaying extends React.Component{
     this.updateTime = this.updateTime.bind(this);
     this.onNextSong = this.onNextSong.bind(this);
     this.onPrevSong = this.onPrevSong.bind(this);
+    this.changeTime = this.changeTime.bind(this);
   }
   
   componentDidUpdate(newProps){
@@ -62,6 +63,18 @@ class NowPlaying extends React.Component{
   isEmpty(obj){
     if (!obj) return true;
     return Object.keys(obj).length === 0
+  }
+  changeTime(seconds){
+    if (seconds < 60){
+      if (seconds < 10){
+        return "0:0"+seconds;
+      }
+      return "0:"+seconds
+    } else {
+      let sec = seconds%60;
+      if (sec < 10) { sec = "0" + sec }
+      return String(Math.floor(seconds/60)) + ":" + sec;
+    }
   }
   onNextSong(){
     // this.player.seekTo(0);
@@ -197,6 +210,12 @@ class NowPlaying extends React.Component{
       // currentSong = this.props.songs[this.props.playback.playbackSongs[this.state.currSongIdx]];
       currentSong = this.props.songs[this.props.playback.playbackSongs[this.props.playback.currSongIdx]];
     }
+    let endTime = ""
+    let startTime = ""
+    if (this.state.duration){
+      startTime = this.changeTime(this.state.currentSeconds);
+      endTime = this.changeTime(this.state.duration);
+    }
   
   // if (!currentSong) {
   //   return <div></div>
@@ -213,8 +232,8 @@ class NowPlaying extends React.Component{
       <div className="now-playing-artwork" style={{'backgroundImage': 'url('+ this.getImageUrl(currentSong.id)+')'}}></div> 
       : <div></div>}
       <div className="now-playing-track-info">
-      <div className="now-playing-title">{!this.isEmpty(currentSong) ? currentSong.name : ""}</div>
-      <div className="now-playing-artist">{!this.isEmpty(this.props.artists) && !this.isEmpty(currentSong) ? this.props.artists[currentSong.artist_id].name : ""}</div>
+        <div className="now-playing-title">{!this.isEmpty(currentSong) ? currentSong.name : ""}</div>
+        <div className="now-playing-artist">{!this.isEmpty(this.props.artists) && !this.isEmpty(currentSong) ? this.props.artists[currentSong.artist_id].name : ""}</div>
       </div>
     </div>
     <div className="now-playing-bar-middle">
@@ -239,7 +258,7 @@ class NowPlaying extends React.Component{
 
       </div>
       <div className="playback-bar">
-        <div className="progress-current-time">{this.state.currentSeconds}</div>
+        <div className="progress-current-time">{startTime}</div>
         <div className="progress-bar"  id="progressBar" onClick={this.onClickProgress} onMouseEnter={this.toggleProgressHover} onMouseLeave={this.toggleProgressHover}>
         <div className="progress-bar-bg" >
           <div className="progress-bar-wrapper" > 
@@ -252,7 +271,7 @@ class NowPlaying extends React.Component{
           </div>
         </div>
         </div>
-        <div className="progress-end-time">{this.state.duration ? this.state.duration : ""}</div>
+        <div className="progress-end-time">{endTime}</div>
       </div>
 
       </div>

@@ -76,22 +76,22 @@ class ChillifyMain extends React.Component{
             <nav className="main-content-nav">
               <ul className="main-content-nav-list">
                 <li className="mc-nav-list-elements">
-                  <Link to="/" className="mc-nav-list-links" onClick={this.getProps}>FEATURED</Link>
+                  <Link to="/" className="mc-nav-list-links not-implemented">FEATURED</Link>
                 </li>
                 <li className="mc-nav-list-elements">
-                  <Link to="/" className="mc-nav-list-links">PODCASTS</Link>
+                  <Link to="/" className="mc-nav-list-links not-implemented">PODCASTS</Link>
                 </li>
                 <li className="mc-nav-list-elements">
-                  <Link to="/" className="mc-nav-list-links">CHARTS</Link>
+                  <Link to="/" className="mc-nav-list-links not-implemented">CHARTS</Link>
                 </li>
                 <li className="mc-nav-list-elements">
-                  <Link to="/" className="mc-nav-list-links">GENRES</Link>
+                  <Link to="/" className="mc-nav-list-links not-implemented">GENRES</Link>
                 </li>
                 <li className="mc-nav-list-elements">
-                  <Link to="/" className="mc-nav-list-links">NEW RELEASES</Link>
+                  <Link to="/" className="mc-nav-list-links not-implemented">NEW RELEASES</Link>
                 </li>
                 <li className="mc-nav-list-elements">
-                  <Link to="/" className="mc-nav-list-links">DISCOVER</Link>
+                  <Link to="/" className="mc-nav-list-links not-implemented">DISCOVER</Link>
                 </li>
               </ul>
             </nav>

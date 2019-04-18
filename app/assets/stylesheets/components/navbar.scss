@@ -68,3 +68,36 @@
 .spotify-navbar {
   font-size: 24px;
 }
+.welcome-message{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-top: 1px solid #404040;  
+  margin-right: 24px;
+  padding: 12px 0 0 0 ;
+  .user-name{
+    padding-left: 12px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .logout-button:hover{
+    cursor: pointer;
+  }
+}
+
+
+
+
+.user-avatar{
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/WelshCorgi.jpeg/220px-WelshCorgi.jpeg);
+  // background-color: yellow;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  // background-color: rgba(0,0,0,.15);
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+

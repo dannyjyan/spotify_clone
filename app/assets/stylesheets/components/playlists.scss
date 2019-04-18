@@ -1,4 +1,5 @@
 
+
 .playlist-index-container{
 
   .playlist-content{
@@ -110,4 +111,20 @@
     }
   }
   }
+}
+
+.nav-link-selected{
+  opacity: 1;
+  color: white;
+}
+.nav-link-selected:before{
+  content: "";
+  height: 2px;
+  background-color: #1db954;
+  width: 30px;
+  position: absolute;
+  display: block;
+  left: 50%;
+  bottom: 0;
+  margin-left: -15px;
 }

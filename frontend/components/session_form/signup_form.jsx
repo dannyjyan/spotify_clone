@@ -15,9 +15,12 @@ class SignupForm extends React.Component {
       };
       this.handleSubmit = this.handleSubmit.bind(this);
       this.renderErrors = this.renderErrors.bind(this);
+      this.loginCorgi = this.loginCorgi.bind(this);
     }
 
-
+    loginCorgi(){
+      this.props.login({username: 'Corgi', password: 'password'});
+    }
     handleSubmit(e) {
         e.preventDefault();
         // if (this.state.email !== this.state.confirmEmail){
@@ -93,12 +96,16 @@ class SignupForm extends React.Component {
                     onChange={this.update('username')}/>
                     </div>
                 </div>
-
+                
                 <div className="signup-row row-submit">
-                  <div className="col-xs-12">
+                  <div className="col-xs-12 signup-button-div">
                     <input type="submit" className="btn-green" value="SIGN UP"/>
                   </div>
+                  <div className="col-xs-12">
+                    <input type="button" className="btn-green" value="DEMO" onClick={this.loginCorgi}/>
+                  </div>
                 </div>
+
               </form>
               <div className="show-signup">
                 <div className="row">

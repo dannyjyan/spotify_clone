@@ -41,7 +41,7 @@ export const NavBar = () => {
           </li>
           <li className="navBar-group">
             <div className="navBar-item">
-              <Link to="/" className="nav-bar-link">
+              <Link to="/collection/playlists" className="nav-bar-link">
                 <div className="nav-bar-link-wrapper">
                   <div className="nav-library-icon">
                     <FontAwesomeIcon icon="book"/>

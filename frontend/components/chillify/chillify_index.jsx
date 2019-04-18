@@ -5,6 +5,7 @@ import {AuthRoute, ProtectedRoute, RootRoute} from '../../util/route_util';
 import ChillifyMainContainer from './chillify_main_container';
 import NowPlayingContainer from '../nowPlaying/now_playing_container';
 import PlaylistIndexContainer from '../playlist/playlist_index_container'
+import PlaylistsComponent from '../playlist/playlists_component';
 import {
     Route,
     Redirect,
@@ -28,6 +29,10 @@ class ChillifyIndex extends React.Component{
                             <Route
                               path="/playlist/:playlistId"
                               component={PlaylistIndexContainer}
+                            />
+                            <Route
+                              path="/collection/playlists"
+                              component={PlaylistsComponent}
                             />
                             <Route
                               path="/"

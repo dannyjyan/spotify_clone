@@ -32,7 +32,7 @@ class NowPlaying extends React.Component{
     this.hoverColor = '#1db954';
     this.onClickProgress = this.onClickProgress.bind(this);
     this.onClickVolume = this.onClickVolume.bind(this);
-    this.setDuration = this.setDuration.bind(this);
+    this.onReady = this.onReady.bind(this);
     this.onProgress = this.onProgress.bind(this);
     this.ref = this.ref.bind(this);
     this.toggleVolumeHover = this.toggleVolumeHover.bind(this);
@@ -139,8 +139,9 @@ class NowPlaying extends React.Component{
     this.player = player;
   }
 
-  setDuration(){
+  onReady(){
     this.setState({
+      playing: true,
       duration: Math.floor(this.player.getDuration())
     })
   }
@@ -264,7 +265,7 @@ class NowPlaying extends React.Component{
         url={currentSong.audio_url}
         playing={this.state.playing}
         onProgress={this.onProgress}
-        onReady={this.setDuration}
+        onReady={this.onReady}
         onEnded={this.onNextSong}
         volume={volume}
       /> : ""

@@ -1,8 +1,10 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import { fetchPlaylists } from '../../actions/playlist_actions';
+import {fetchSongs, fetchAlbums, fetchArtists} from '../../actions/song_actions';
 import {Link, Switch, Route} from 'react-router-dom';
-import {PlaylistIndexItem} from '../playlist/playlist_index_item';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-class ChillifyMain extends React.Component{
+class PlaylistsComponent extends React.Component{
 
   constructor(props){
     super(props)
@@ -44,13 +46,13 @@ class ChillifyMain extends React.Component{
     document.querySelector(".playlist-photo-"+ id).classList.remove("show");
   }
   componentDidMount(){
-    document.getElementsByClassName('top-container')[0].setAttribute('style', 'background-image: linear-gradient(to right bottom, rgb(104, 49, 56), rgb(0, 0, 0)), linear-gradient(transparent, rgb(0, 0, 0) 70%)')
+    document.getElementsByClassName('top-container')[0].setAttribute('style', 'background-image: linear-gradient(to right bottom, rgb(53, 98, 100), rgb(0, 0, 0)), linear-gradient(transparent, rgb(0, 0, 0) 70%);')
 
   }
   componentWillMount(){
     // console.log(this.props)
 
-    this.props.fetchPlaylists().then(p => {
+    this.props.fetchPlaylists(this.props.currentUser.id).then(p => {
         this.props.fetchSongs().then(s => {
           this.props.fetchAlbums().then(a => {
             this.props.fetchArtists().then(art => {
@@ -76,15 +78,15 @@ class ChillifyMain extends React.Component{
             <nav className="main-content-nav">
               <ul className="main-content-nav-list">
                 <li className="mc-nav-list-elements">
-                  <Link to="/" className="mc-nav-list-links" onClick={this.getProps}>FEATURED</Link>
+                  <Link to="/" className="mc-nav-list-links nav-link-selected">PLAYLISTS</Link>
                 </li>
                 <li className="mc-nav-list-elements">
-                  <Link to="/" className="mc-nav-list-links">PODCASTS</Link>
+                  <Link to="/" className="mc-nav-list-links">SONGS (TBD) </Link>
                 </li>
                 <li className="mc-nav-list-elements">
-                  <Link to="/" className="mc-nav-list-links">CHARTS</Link>
+                  <Link to="/" className="mc-nav-list-links">ARTISTS (TBD)</Link>
                 </li>
-                <li className="mc-nav-list-elements">
+                {/* <li className="mc-nav-list-elements">
                   <Link to="/" className="mc-nav-list-links">GENRES</Link>
                 </li>
                 <li className="mc-nav-list-elements">
@@ -92,15 +94,12 @@ class ChillifyMain extends React.Component{
                 </li>
                 <li className="mc-nav-list-elements">
                   <Link to="/" className="mc-nav-list-links">DISCOVER</Link>
-                </li>
+                </li>  */}
               </ul>
             </nav>
             <div>
               <section className="content">
                 <div>
-                  <div className="grid-header">
-                    <h1 className="grid-header-text">Featured Playlists</h1>
-                  </div>
                   <div className="grid-container-fluid">
                     <div className="grid-container-playlist">
                       { this.state.playlists ? 
@@ -113,6 +112,10 @@ class ChillifyMain extends React.Component{
                             <div className="media-item">
                               {plist.name}
                             </div> 
+                            <div className="playlist-index-author">
+                              {plist.username}
+                            </div>
+
                           </div>
                           ) 
                           
@@ -131,6 +134,27 @@ class ChillifyMain extends React.Component{
     )
   }
 }
-export default ChillifyMain;
 
 {/* <PlaylistIndexItem key={plist.id} playlist={plist} songs={this.getPlaylistSongs(plist.songIds)} coverUrl={this.getCoverPhoto(plist.songIds[0])}/>)} */}
+
+
+const mapStateToProps = ({entities, session}) => {  
+    return ({
+        currentUser: entities.users[session.id],
+        playlists: entities.playlists,
+        songs: entities.songs,
+        albums: entities.albums,
+    
+    })
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    fetchPlaylists: (userId) => dispatch(fetchPlaylists(userId)),
+    fetchSongs: () => dispatch(fetchSongs()),
+    fetchAlbums: () => dispatch(fetchAlbums()),
+    fetchArtists: () => dispatch(fetchArtists())
+
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlaylistsComponent)
+

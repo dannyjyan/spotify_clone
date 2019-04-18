@@ -13,7 +13,6 @@ const mapStateToProps = ({entities, session}, ownProps) => {
     songs: entities.songs,
     albums: entities.albums,
     artists: entities.artists
-  
   })
 }
 

@@ -13,6 +13,7 @@ class PlaylistIndexItem extends React.Component{
   }
   this.getSongs = this.getSongs.bind(this);
   this.changePlaylist = this.changePlaylist.bind(this)
+  this.changeSong = this.changeSong.bind(this)
 ;  }
 
   componentWillMount(){
@@ -35,6 +36,18 @@ class PlaylistIndexItem extends React.Component{
     this.props.receiveCurrentPlaylist(this.props.playlist.id)
     this.props.receivePlaylistSongs(this.props.playlist.songIds)
     this.props.receiveCurrentSong(0);
+  }
+  changeSong(id){
+    this.props.receiveCurrentPlaylist(this.props.playlist.id)
+    this.props.receivePlaylistSongs(this.props.playlist.songIds)
+    let plistSongIdx = 0;
+    for(let i = 0; i < this.props.playlist.songIds.length; i++){
+      if (this.props.playlist.songIds[i] === id) {
+        plistSongIdx = i
+        break;
+      }
+    }
+    this.props.receiveCurrentSong(plistSongIdx);
   }
   getCoverPhoto(songId){
   let {songs, albums} = this.props;
@@ -70,6 +83,9 @@ class PlaylistIndexItem extends React.Component{
     <div className="playlist-loading"> LOADING </div>
     )
   }
+  let plistSongIdx = -1;
+  console.log(this.props);
+
   // console.log(this.props)
   return (
     <div className="playlist-index-container">
@@ -108,12 +124,11 @@ class PlaylistIndexItem extends React.Component{
       </div>
       <div className="tracklist-container">
         <ol className="tracklist">
-        {currPlaylist.songIds.map((id) => {
-
+        { currPlaylist.songIds.map((id) => {
           let song = this.props.songs[id]; 
           if (song && Object.entries(song).length !== 0){
           return (
-          <li key={"song"+id} className="tracklist-row" id={"tracklist-song-"+id} >
+          <li key={"song"+id} className="tracklist-row" id={"tracklist-song-"+id} onClick={() => this.changeSong(id)}>
             <div className="tracklist-left">
               <FontAwesomeIcon className="icon" icon="music" />    
             </div>
@@ -123,7 +138,6 @@ class PlaylistIndexItem extends React.Component{
             </div> 
           </li>
           )
-          
           }
         })
         

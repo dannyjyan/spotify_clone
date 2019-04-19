@@ -98,13 +98,34 @@ class ChillifyMain extends React.Component{
             <div>
               <section className="content">
                 <div>
-                  <div className="grid-header">
-                    <h1 className="grid-header-text">Featured Playlists</h1>
-                  </div>
                   <div className="grid-container-fluid">
+                    <div className="grid-header">
+                    <h1 className="grid-header-text">Explore</h1>
+                    </div>
                     <div className="grid-container-playlist">
                       { this.state.playlists ? 
-                        Object.values(this.state.playlists).map(plist => 
+                        Object.values(this.state.playlists).slice(7).map(plist => 
+                          <div className="playlist-index-item" key={"playlist-" + plist.id}>
+                            <Link to={"/playlist/" + plist.id} className={"playlist-index-photo"}  onMouseLeave={() => this.hoverPlayOff(plist.id)} onMouseEnter={() => this.hoverPlayOn(plist.id)} style={{backgroundImage: "url(" + this.getCoverPhoto(plist.songIds[0]) + ")"}}>
+                              <FontAwesomeIcon  className={"playlist-play-toggle "+ "playlist-photo-" + plist.id}  icon="play-circle" />
+
+                            </Link>
+                            <div className="media-item">
+                              {plist.name}
+                            </div> 
+                          </div>
+                          ) 
+                          
+                        : ""
+                      }
+                    </div>
+                    <div className="grid-header">
+                      <h1 className="grid-header-text">Featured Playlists</h1>
+                    </div>
+
+                    <div className="grid-container-playlist">
+                      { this.state.playlists ? 
+                        Object.values(this.state.playlists).slice(0,7).map(plist => 
                           <div className="playlist-index-item" key={"playlist-" + plist.id}>
                             <Link to={"/playlist/" + plist.id} className={"playlist-index-photo"}  onMouseLeave={() => this.hoverPlayOff(plist.id)} onMouseEnter={() => this.hoverPlayOn(plist.id)} style={{backgroundImage: "url(" + this.getCoverPhoto(plist.songIds[0]) + ")"}}>
                               <FontAwesomeIcon  className={"playlist-play-toggle "+ "playlist-photo-" + plist.id}  icon="play-circle" />
@@ -119,10 +140,8 @@ class ChillifyMain extends React.Component{
                         : ""
                     
                       }
-
-
-
                     </div>
+
                   </div>
                 </div>
               </section>

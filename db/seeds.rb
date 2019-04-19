@@ -22,6 +22,16 @@ lungs_pl = Playlist.create(name: "Lungs", user_id: danny.id)
 awake = Playlist.create(name: "Awake", user_id: corgi.id)
 chill_tracks = Playlist.create(name: "Chill Tracks", user_id: spotify.id)
 
+acoustic_calm = Playlist.create(name: "Acoustic Calm", user_id: spotify.id)
+relax_unwind = Playlist.create(name: "Relax Unwind", user_id: spotify.id)
+instrumental_study = Playlist.create(name: "Instrumental Study", user_id: spotify.id)
+feeling_down = Playlist.create(name: "Feeling Down", user_id: spotify.id)
+sunny_day = Playlist.create(name: "Sunny Day", user_id: spotify.id)
+chill_hits = Playlist.create(name: "Chill Hits", user_id: spotify.id)
+
+
+
+
 #Artists
 florence = Artist.create(name: "Florence + the Machine")
 ariana = Artist.create(name: "Ariana Grande")
@@ -32,6 +42,8 @@ illenium = Artist.create(name: "Illenium")
 kasbo = Artist.create(name: "Kasbo")
 san_holo = Artist.create(name: "San Holo")
 said_the_sky = Artist.create(name: "Said the Sky")
+#
+spotify_artist =  Artist.create(name: "Spotify")
 
 
 #Albums
@@ -46,6 +58,16 @@ we_rise_alb = Album.create(name: "We Rise", artist_id: san_holo.id, image_url: "
 light_alb = Album.create(name: "Light", artist_id: san_holo.id, image_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/images/light.jpeg")
 places_we_dont = Album.create(name: "Places We Don't Know", artist_id: kasbo.id, image_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/images/places-we-dont-know.jpeg")
 wide_eyed = Album.create(name: "Wide Eyed", artist_id: said_the_sky.id, image_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/images/wide-eyed.jpeg")
+#
+acoustic_calm_al = Album.create(name: "Acoustic Calm", artist_id: spotify.id, image_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/images/acoustic-calm.jpeg")
+relax_unwind_al = Album.create(name: "Relax Unwind", artist_id: spotify.id, image_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/images/relax-unwind.jpeg")
+instrumental_study_al = Album.create(name: "Instrumental Study", artist_id: spotify.id, image_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/images/instrumental-study.jpeg")
+feeling_down_al = Album.create(name: "Feeling Down", artist_id: spotify.id, image_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/images/feeling-down.jpeg")
+sunny_day_al = Album.create(name: "Sunny Day", artist_id: spotify.id, image_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/images/sunny-day.jpeg")
+chill_hits_al = Album.create(name: "Chill Hits", artist_id: spotify.id, image_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/images/chill-hits.jpeg")
+
+
+
 
 #Songs 
 dog_days = Song.create(name: "Dog Days Are Over", year: 2009, artist_id: florence.id, album_id: lungs.id, audio_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/audio/FlorenceandTheMachine-DogDaysAreOver.mp3")
@@ -73,6 +95,14 @@ all_i_got = Song.create(name: "All I Got", year: 2017, artist_id: said_the_sky.i
 light = Song.create(name: "Light", year: 2017, artist_id: san_holo.id, album_id: light_alb.id, audio_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/audio/SanHolo-Light.mp3");
 about_you = Song.create(name: "About You", year: 2018, artist_id: kasbo.id, album_id: places_we_dont.id, audio_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/audio/Kasbo-About-You.mp3")
 we_rise = Song.create(name: "We Rise", year: 2015, artist_id: san_holo.id, album_id: we_rise_alb.id, audio_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/audio/SanHolo-We-Rise.mp3");
+
+
+beautiful_creatures2 = Song.create(name: "Beautiful Creatures (feat. MAX)", year: 2017, artist_id: illenium.id, album_id: acoustic_calm_al.id, audio_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/audio/Illenium-Beautiful-Creatures.mp3")
+let_you_go2 = Song.create(name: "Let You Go", year: 2017, artist_id: illenium.id, album_id: relax_unwind_al.id, audio_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/audio/Illenium-Let-You-Go.mp3")
+all_i_got2 = Song.create(name: "All I Got", year: 2017, artist_id: said_the_sky.id, album_id: instrumental_study_al.id, audio_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/audio/SaidTheSky-All-I-Got.mp3")
+light2 = Song.create(name: "Light", year: 2017, artist_id: san_holo.id, album_id: feeling_down_al.id, audio_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/audio/SanHolo-Light.mp3");
+about_you2 = Song.create(name: "About You", year: 2018, artist_id: kasbo.id, album_id: sunny_day_al.id, audio_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/audio/Kasbo-About-You.mp3")
+we_rise2 = Song.create(name: "We Rise", year: 2015, artist_id: san_holo.id, album_id: chill_hits_al.id, audio_url: "https://s3-us-west-1.amazonaws.com/chillify-seeds/audio/SanHolo-We-Rise.mp3");
 
 
 #Playlist_Songs
@@ -105,7 +135,13 @@ PlaylistSong.create(song_id: all_i_got.id, playlist_id: chill_tracks.id);
 PlaylistSong.create(song_id: about_you.id, playlist_id: chill_tracks.id);
 PlaylistSong.create(song_id: we_rise.id, playlist_id: chill_tracks.id);
 PlaylistSong.create(song_id: light.id, playlist_id: chill_tracks.id);
-
+#
+PlaylistSong.create(song_id: beautiful_creatures2.id, playlist_id: acoustic_calm.id);
+PlaylistSong.create(song_id: let_you_go2.id, playlist_id: relax_unwind.id);
+PlaylistSong.create(song_id: all_i_got2.id, playlist_id: instrumental_study.id);
+PlaylistSong.create(song_id: light2.id, playlist_id: feeling_down.id);
+PlaylistSong.create(song_id: about_you2.id, playlist_id: sunny_day.id);
+PlaylistSong.create(song_id: we_rise2.id, playlist_id: chill_hits.id);
 
 
 #Add audio to songs

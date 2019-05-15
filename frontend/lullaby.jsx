@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   library.add(faIgloo, faPlay,faPause,faVolumeUp,faVolumeMute,faStepBackward,faStepForward, faMusic, faPlayCircle, faHome,faSearch, faBook, fab)
   
-  window.fetchArtists = fetchArtists;
-  window.fetchAlbums = fetchAlbums;
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
+  // window.fetchArtists = fetchArtists;
+  // window.fetchAlbums = fetchAlbums;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
   // end test
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store}/>, root);

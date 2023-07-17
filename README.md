@@ -2,7 +2,8 @@
 
 
 ## Chillify
-[Live Site](https://chillify.herokuapp.com)
+[Live Site] 
+EDIT: Live Site is down after heroku changed TOS
 
 ## What is Chillify? 
 Chillify is a music streaming service based on Spotify that features continuous play while navigating and playlist following, creation, and deletion. 
